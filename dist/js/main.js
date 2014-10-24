@@ -29465,7 +29465,7 @@ goog.require("goog.events");
 goog.require("goog.dom");
 goog.require("goog.dom");
 edin.main.NAME = "edin text editor";
-edin.main.drawing_position = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "x", "x", 2099068185), 10, new cljs.core.Keyword(null, "y", "y", -1757859776), 20], null);
+edin.main.pos_y = 20;
 edin.main.editor_canvas = goog.dom.getElement("editor");
 edin.main.editor_ctx = edin.main.editor_canvas.getContext("2d");
 edin.main.w = goog.dom.getWindow();
@@ -29473,7 +29473,7 @@ edin.main.d = goog.dom.getDocument();
 edin.main.editor_ctx.font = "15px Monospace";
 edin.main.char_width = edin.main.editor_ctx.measureText("a").width;
 edin.main.buffer = "";
-edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 221, 48, 32, 91, 187, 219, 57, 16, 8, 190], [function(buf) {
+edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 221, 48, 32, 91, 13, 187, 219, 57, 16, 8, 190], [function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + ";";
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + '"';
@@ -29485,6 +29485,8 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + " ";
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + "'";
+}, function(p1__5182_SHARP_) {
+  return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__5182_SHARP_) + "\n";
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + "\x3d";
 }, function(buf) {
@@ -29498,18 +29500,35 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + ".";
 }]);
-edin.main.lines = cljs.core.PersistentVector.EMPTY;
+edin.main.render_editor_ui = function render_editor_ui() {
+  return edin.main.editor_ctx.strokeRect(0, 0, 600, 600);
+};
+edin.main.render_editor_ui.call(null);
 edin.main.render = function render() {
-  console.log("rendering!" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer));
   edin.main.editor_ctx.clearRect(0, 0, 600, 600);
-  edin.main.editor_ctx.fillText(edin.main.buffer, 20, 20);
-  var text_width = edin.main.editor_ctx.measureText(edin.main.buffer).width;
-  return edin.main.editor_ctx.fillRect(20 + text_width, 8, edin.main.char_width, 15);
+  edin.main.render_editor_ui.call(null);
+  console.log("rendering!" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer));
+  var lines = edin.main.buffer.split("\n");
+  var text_width = edin.main.editor_ctx.measureText(cljs.core.last.call(null, lines)).width;
+  var y_5183 = 20;
+  var rec_lines_5184 = lines;
+  while (true) {
+    if (cljs.core.seq.call(null, rec_lines_5184)) {
+      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_5184), 20, y_5183);
+      edin.main.pos_y = y_5183 + 20;
+      var G__5185 = edin.main.pos_y;
+      var G__5186 = cljs.core.rest.call(null, rec_lines_5184);
+      y_5183 = G__5185;
+      rec_lines_5184 = G__5186;
+      continue;
+    } else {
+    }
+    break;
+  }
+  return edin.main.editor_ctx.fillRect(20 + text_width, edin.main.pos_y - 32, edin.main.char_width, 15);
 };
 edin.main.on_input = function on_input(e) {
   var code = e.keyCode;
-  var pos_x = (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(edin.main.drawing_position);
-  var pos_y = (new cljs.core.Keyword(null, "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(edin.main.drawing_position);
   var handler = cljs.core.get.call(null, edin.main.keycode_to_string, code, new cljs.core.Keyword(null, "handler-not-found", "handler-not-found", -14251024));
   console.log("key down: " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(code), e);
   e.preventDefault();

@@ -4,8 +4,9 @@
   )
 
 (def NAME "edin text editor")
-(def drawing-position {:x 10 :y 20})
+;(def drawing-position {:x 10 :y 20})
 
+(def pos-y 20)
 (def editor-canvas (dom/getElement "editor"))
 (def editor-ctx (.getContext editor-canvas "2d"))
 (def w (dom/getWindow))
@@ -13,16 +14,13 @@
 (set! (.-font editor-ctx) "15px Monospace")
 (def char-width (.-width (.measureText editor-ctx "a")))
 (def buffer "")
-;(defn render-cursor
 
-;)
-
-(def keycode-to-string { 
-                        32 (fn [buf] (str buf " ")) 
-                        57 (fn [buf] (str buf "(")) 
-                        48 (fn [buf] (str buf ")")) 
-                        219 (fn [buf] (str buf "{")) 
-                        221 (fn [buf] (str buf "}")) 
+(def keycode-to-string {
+                        32 (fn [buf] (str buf " "))
+                        57 (fn [buf] (str buf "("))
+                        48 (fn [buf] (str buf ")"))
+                        219 (fn [buf] (str buf "{"))
+                        221 (fn [buf] (str buf "}"))
                         16 (fn [buf] buf)
                         222 (fn [buf] (str buf "\""))
                         91 (fn [buf] (str buf "'"))
@@ -30,33 +28,42 @@
                         187 (fn [buf] (str buf "="))
                         190 (fn [buf] (str buf "."))
                         8 (fn [buf](reduce str (take (- (count buf) 1) buf)))
+                        13 #(str % "\n")
                         })
 
-(def lines [])
+(defn render-editor-ui 
+  []
+  (.strokeRect editor-ctx 0 0 600 600))
 
-
-;(js/setInterval render-cursor 500)
-
+(render-editor-ui)
 (defn render
   []
   (do
-
-    (.log js/console (str "rendering!" buffer))
     (.clearRect editor-ctx 0 0 600 600)
-    (.fillText editor-ctx buffer 20 20)
-    (let [text-width (.-width (.measureText editor-ctx buffer))]
-      (.fillRect editor-ctx (+ 20 text-width) 8 char-width 15)
+    (render-editor-ui)
+    (.log js/console (str "rendering!" buffer))
+
+    ;(.fillText editor-ctx buffer 20 20)
+    (let [lines (.split buffer "\n")
+          text-width (.-width (.measureText editor-ctx (last lines)))
+          ]
+      (loop [y 20 
+             rec-lines lines]
+        (when (seq rec-lines)
+          (.fillText editor-ctx (first rec-lines) 20 y)
+          (set! pos-y (+ y 20))
+          (recur pos-y (rest rec-lines))
+          )
+        )
+      (.fillRect editor-ctx (+ 20 text-width) (- pos-y 32 ) char-width 15)
       )
     )
   )
 
-;(.log js/console (get keycode-to-string 32))
 (defn on-input
   [e]
   ;(js/alert (.-keyCode e))
   (let [code (.-keyCode e)
-        pos-x (:x drawing-position)
-        pos-y (:y drawing-position)
         handler (get keycode-to-string code :handler-not-found)
         ]
     (.log js/console (str "key down: " code) e)
@@ -71,7 +78,7 @@
         ;(.preventDefault e)
         ;(.stopPropagation e)
         ;)
-       )  
+       )
 
      (when (not (= handler :handler-not-found))
        (.log js/console "handling event")
