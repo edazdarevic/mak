@@ -29465,16 +29465,80 @@ goog.require("goog.events");
 goog.require("goog.dom");
 goog.require("goog.dom");
 edin.main.NAME = "edin text editor";
-edin.main.pos_y = 20;
 edin.main.editor_canvas = goog.dom.getElement("editor");
 edin.main.editor_ctx = edin.main.editor_canvas.getContext("2d");
+edin.main.cx = 0;
+edin.main.cy = 0;
+edin.main.width = 600;
+edin.main.height = 600;
+edin.main.caret_width = 2;
+edin.main.caret_height = 15;
+edin.main.pos_y = 20;
 edin.main.w = goog.dom.getWindow();
 edin.main.d = goog.dom.getDocument();
 edin.main.editor_ctx.font = "15px Monospace";
 edin.main.char_width = edin.main.editor_ctx.measureText("a").width;
 edin.main.buffer = "";
-edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 221, 48, 32, 91, 13, 187, 219, 57, 16, 8, 190], [function(buf) {
+edin.main.get_lines = function get_lines() {
+  return edin.main.buffer.split("\n");
+};
+edin.main.num_of_lines = function num_of_lines() {
+  return cljs.core.count.call(null, edin.main.get_lines.call(null));
+};
+edin.main.len_at_line = function len_at_line(n) {
+  var line = cljs.core.nth.call(null, edin.main.get_lines.call(null), n);
+  return cljs.core.count.call(null, line);
+};
+edin.main.move_x_to = function move_x_to(x) {
+  return edin.main.cx = x;
+};
+edin.main.move_y_to = function move_y_to(y) {
+  return edin.main.cy = y;
+};
+edin.main.inc_x = function inc_x() {
+  return edin.main.move_x_to.call(null, edin.main.cx + 1);
+};
+edin.main.dec_x = function dec_x() {
+  return edin.main.move_x_to.call(null, edin.main.cx - 1);
+};
+edin.main.inc_y = function inc_y() {
+  return edin.main.move_y_to.call(null, edin.main.cy + 1);
+};
+edin.main.dec_y = function dec_y() {
+  return edin.main.move_y_to.call(null, edin.main.cy - 1);
+};
+edin.main.move_x_forward = function move_x_forward() {
+  if (edin.main.cx + 1 < edin.main.len_at_line.call(null, edin.main.cy) && edin.main.len_at_line.call(null, edin.main.cy) < edin.main.inc_x.call(null)) {
+    return null;
+  } else {
+    return null;
+  }
+};
+edin.main.move_y_backward = function move_y_backward() {
+  if (edin.main.cy - 1 >= 0) {
+    return edin.main.dec_y.call(null);
+  } else {
+    return null;
+  }
+};
+edin.main.move_x_backward = function move_x_backward() {
+  if (edin.main.cx - 1 < 0) {
+    return edin.main.move_y_backward.call(null);
+  } else {
+    return edin.main.dec_x.call(null);
+  }
+};
+edin.main.move_y_forward = function move_y_forward() {
+  return edin.main.inc_y.call(null);
+};
+edin.main.get_cursor_drawing_pos = function get_cursor_drawing_pos() {
+  return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "x", "x", 2099068185), 20 + (edin.main.cx + 1) * edin.main.char_width, new cljs.core.Keyword(null, "y", "y", -1757859776), (edin.main.cy + 1) * 15], null);
+};
+edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 39, 222, 221, 48, 32, 91, 13, 187, 219, 57, 16, 37, 8, 190], [function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + ";";
+}, function(buf) {
+  edin.main.move_x_forward.call(null);
+  return buf;
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + '"';
 }, function(buf) {
@@ -29485,8 +29549,10 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + " ";
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + "'";
-}, function(p1__5182_SHARP_) {
-  return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__5182_SHARP_) + "\n";
+}, function(buf) {
+  edin.main.move_y_forward.call(null);
+  edin.main.move_x_to.call(null, 0);
+  return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + "\n";
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + "\x3d";
 }, function(buf) {
@@ -29496,12 +29562,26 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 222, 
 }, function(buf) {
   return buf;
 }, function(buf) {
+  edin.main.move_x_backward.call(null);
+  return buf;
+}, function(buf) {
+  edin.main.move_x_backward.call(null);
   return cljs.core.reduce.call(null, cljs.core.str, cljs.core.take.call(null, cljs.core.count.call(null, buf) - 1, buf));
 }, function(buf) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(buf) + ".";
 }]);
+edin.main.handle_input = function handle_input(keyCode, e) {
+  edin.main.buffer = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer) + cljs.core.str.cljs$core$IFn$_invoke$arity$1(String.fromCharCode(32 + keyCode));
+  return edin.main.move_x_forward.call(null);
+};
 edin.main.render_editor_ui = function render_editor_ui() {
-  return edin.main.editor_ctx.strokeRect(0, 0, 600, 600);
+  edin.main.editor_ctx.strokeRect(0, 0, 600, 600);
+  return edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cx) + "," + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cy), 20, 580);
+};
+edin.main.draw_cursor = function draw_cursor() {
+  var x = (new cljs.core.Keyword(null, "x", "x", 2099068185)).cljs$core$IFn$_invoke$arity$1(edin.main.get_cursor_drawing_pos.call(null));
+  var y = (new cljs.core.Keyword(null, "y", "y", -1757859776)).cljs$core$IFn$_invoke$arity$1(edin.main.get_cursor_drawing_pos.call(null));
+  return edin.main.editor_ctx.fillRect(x, y, edin.main.caret_width, edin.main.caret_height);
 };
 edin.main.render_editor_ui.call(null);
 edin.main.render = function render() {
@@ -29510,22 +29590,22 @@ edin.main.render = function render() {
   console.log("rendering!" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer));
   var lines = edin.main.buffer.split("\n");
   var text_width = edin.main.editor_ctx.measureText(cljs.core.last.call(null, lines)).width;
-  var y_5183 = 20;
-  var rec_lines_5184 = lines;
+  var y_5517 = 20;
+  var rec_lines_5518 = lines;
   while (true) {
-    if (cljs.core.seq.call(null, rec_lines_5184)) {
-      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_5184), 20, y_5183);
-      edin.main.pos_y = y_5183 + 20;
-      var G__5185 = edin.main.pos_y;
-      var G__5186 = cljs.core.rest.call(null, rec_lines_5184);
-      y_5183 = G__5185;
-      rec_lines_5184 = G__5186;
+    if (cljs.core.seq.call(null, rec_lines_5518)) {
+      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_5518), 20, y_5517);
+      edin.main.pos_y = y_5517 + 20;
+      var G__5519 = edin.main.pos_y;
+      var G__5520 = cljs.core.rest.call(null, rec_lines_5518);
+      y_5517 = G__5519;
+      rec_lines_5518 = G__5520;
       continue;
     } else {
     }
     break;
   }
-  return edin.main.editor_ctx.fillRect(20 + text_width, edin.main.pos_y - 32, edin.main.char_width, 15);
+  return edin.main.draw_cursor.call(null);
 };
 edin.main.on_input = function on_input(e) {
   var code = e.keyCode;
@@ -29534,7 +29614,7 @@ edin.main.on_input = function on_input(e) {
   e.preventDefault();
   e.stopPropagation();
   if (cljs.core._EQ_.call(null, handler, new cljs.core.Keyword(null, "handler-not-found", "handler-not-found", -14251024))) {
-    edin.main.buffer = "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer) + cljs.core.str.cljs$core$IFn$_invoke$arity$1(String.fromCharCode(32 + code));
+    edin.main.handle_input.call(null, code, e);
   } else {
   }
   if (!cljs.core._EQ_.call(null, handler, new cljs.core.Keyword(null, "handler-not-found", "handler-not-found", -14251024))) {
