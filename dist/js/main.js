@@ -29478,7 +29478,7 @@ edin.main.margin_y = 20;
 edin.main.pos_y = edin.main.margin_y;
 edin.main.w = goog.dom.getWindow();
 edin.main.d = goog.dom.getDocument();
-edin.main.editor_ctx.font = "15px Monaco";
+edin.main.editor_ctx.font = "13px Monaco";
 edin.main.char_width = edin.main.editor_ctx.measureText("a").width;
 edin.main.buffer = "";
 edin.main.editor_ctx.textBaseline = "top";
@@ -29512,7 +29512,7 @@ edin.main.dec_y = function dec_y() {
   return edin.main.move_y_to.call(null, edin.main.cy - 1);
 };
 edin.main.move_x_forward = function move_x_forward() {
-  if (edin.main.cx + 0 <= edin.main.len_at_line.call(null, edin.main.cy)) {
+  if (edin.main.cx <= edin.main.len_at_line.call(null, edin.main.cy)) {
     return edin.main.inc_x.call(null);
   } else {
     if (edin.main.cy + 1 <= edin.main.num_of_lines.call(null)) {
@@ -29524,16 +29524,15 @@ edin.main.move_x_forward = function move_x_forward() {
   }
 };
 edin.main.xy_to_buffer_position = function xy_to_buffer_position() {
-  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__7015_SHARP_) {
-    return cljs.core.count.call(null, p1__7015_SHARP_) + 1;
+  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__7039_SHARP_) {
+    return cljs.core.count.call(null, p1__7039_SHARP_) + 1;
   }, cljs.core.drop_last.call(null, 1, cljs.core.take.call(null, edin.main.cy, edin.main.get_lines.call(null)))));
   return temp_x + edin.main.cx;
 };
 edin.main.move_y_backward = function move_y_backward() {
   if (edin.main.cy - 1 >= 1) {
     edin.main.dec_y.call(null);
-    edin.main.move_x_to.call(null, 1 + edin.main.len_at_line.call(null, edin.main.cy));
-    return console.log("NEWPOSITON IN THE BUFFER IS" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.xy_to_buffer_position.call(null)));
+    return edin.main.move_x_to.call(null, 1 + edin.main.len_at_line.call(null, edin.main.cy));
   } else {
     return null;
   }
@@ -29641,8 +29640,8 @@ edin.main.draw_line_numbers = function draw_line_numbers() {
   while (true) {
     edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(i), 10, edin.main.margin_y + (i - 1) * 20);
     if (i < edin.main.num_of_lines.call(null)) {
-      var G__7016 = i + 1;
-      i = G__7016;
+      var G__7040 = i + 1;
+      i = G__7040;
       continue;
     } else {
       return null;
@@ -29673,20 +29672,19 @@ edin.main.render_editor_ui.call(null);
 edin.main.render = function render() {
   edin.main.editor_ctx.clearRect(0, 0, edin.main.width, edin.main.height);
   edin.main.render_editor_ui.call(null);
-  console.log("rendering!" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.buffer));
   edin.main.editor_ctx.fillStyle = "rgb(255, 255, 255)";
   var lines = edin.main.buffer.split("\n");
   var text_width = edin.main.editor_ctx.measureText(cljs.core.last.call(null, lines)).width;
-  var y_7017 = edin.main.margin_y;
-  var rec_lines_7018 = lines;
+  var y_7041 = edin.main.margin_y;
+  var rec_lines_7042 = lines;
   while (true) {
-    if (cljs.core.seq.call(null, rec_lines_7018)) {
-      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_7018), edin.main.margin_x, y_7017);
-      edin.main.pos_y = y_7017 + 20;
-      var G__7019 = edin.main.pos_y;
-      var G__7020 = cljs.core.rest.call(null, rec_lines_7018);
-      y_7017 = G__7019;
-      rec_lines_7018 = G__7020;
+    if (cljs.core.seq.call(null, rec_lines_7042)) {
+      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_7042), edin.main.margin_x, y_7041);
+      edin.main.pos_y = y_7041 + 20;
+      var G__7043 = edin.main.pos_y;
+      var G__7044 = cljs.core.rest.call(null, rec_lines_7042);
+      y_7041 = G__7043;
+      rec_lines_7042 = G__7044;
       continue;
     } else {
     }

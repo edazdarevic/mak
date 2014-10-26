@@ -20,123 +20,94 @@
 (def pos-y margin-y)
 (def w (dom/getWindow))
 (def d (dom/getDocument))
-(set! (.-font editor-ctx) "15px Monaco")
+(set! (.-font editor-ctx) "13px Monaco")
 (def char-width (.-width (.measureText editor-ctx "a")))
 (def buffer "")
 
 (set! (.-textBaseline editor-ctx) "top")
 (set! (.-fillStyle editor-ctx) "rgb(2, 36, 60)");
-(defn get-lines 
-  []
+
+(defn get-lines []
   (.split buffer "\n"))
 
-(defn num-of-lines
-  []
+(defn num-of-lines []
   (count (get-lines)))
 
-(defn len-at-line
-  [n]
+(defn len-at-line [n]
   (let [line (nth (get-lines) (- n 1))]
     (count line)))
 
-
-(defn move-x-to 
-  [x]
+(defn move-x-to [x]
   (set! cx x))
 
-(defn move-y-to
-  [y]
+(defn move-y-to [y]
   (set! cy y))
 
-(defn inc-x 
-  []
+(defn inc-x []
   (move-x-to (+ cx 1)))
 
-(defn dec-x
-  []
+(defn dec-x []
   (move-x-to (- cx 1)))
 
-(defn inc-y
-  []
+(defn inc-y []
   (move-y-to (+ cy 1)))
 
-(defn dec-y
-  []
+(defn dec-y []
   (move-y-to (- cy 1)))
 
 ; move x forward only if x is not greater then len of current line
-(defn move-x-forward 
-  []
-  (if (<= (+ cx 0) (len-at-line cy))
+(defn move-x-forward []
+  (if (<= cx (len-at-line cy))
            (inc-x)
            (when (<= (+ cy 1) (num-of-lines)) 
             (inc-y)
-            (move-x-to 1)
+            (move-x-to 1))))
 
-            )
-           ))
-
-(defn xy-to-buffer-position
-  []
+(defn xy-to-buffer-position []
   (let [temp-x (reduce + (map #(+ (count %) 1) (drop-last 1 (take cy (get-lines)))))]
-    (+ temp-x cx)
-    )
-  )
-(defn move-y-backward
-  []
+    (+ temp-x cx)))
+
+(defn move-y-backward []
   (when (>= (- cy 1) 1 )
     (dec-y)
-    ; need to reposition x maybe
-      (move-x-to (+ 1 (len-at-line cy)))
-      (.log js/console (str "NEWPOSITON IN THE BUFFER IS" (xy-to-buffer-position)))
-    ))
+    (move-x-to (+ 1 (len-at-line cy)))))
+
 ; move x backward; if not try to move y backward
-(defn move-x-backward 
-  []
+(defn move-x-backward []
   (if (< (- cx 1) 1)
     (move-y-backward)
-    (dec-x)
-    ))
+    (dec-x)))
 
-
-; check for number of lines
-(defn move-y-forward 
-  []
+(defn move-y-forward []
   (inc-y))
 
-(defn move-up 
-  []
+(defn move-up []
   (when (>= (- cy 1) 1)
     (dec-y)
     (when (> cx (len-at-line cy))
-      (move-x-to (+ 1 (len-at-line cy))))
-    ))
+      (move-x-to (+ 1 (len-at-line cy))))))
 
-(defn move-down
-  []
+(defn move-down []
   (when (< cy (num-of-lines))
     (inc-y)
     (when (> cx (len-at-line cy))
-      (move-x-to (+ 1 (len-at-line cy))))
-    )
-  )
+      (move-x-to (+ 1 (len-at-line cy))))))
 
-(defn get-cursor-drawing-pos
-  []
+(defn get-cursor-drawing-pos []
   {:x (+ margin-x (* (- cx 1) char-width))  :y (* cy 20)})
 
 
-(defn remove-at [index] (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
+(defn remove-at [index] 
+  (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
 
-(defn insert [index value] (str (subs buffer 0 (- index 1)) value (subs buffer (- index 1))))
+(defn insert [index value]
+  (str (subs buffer 0 (- index 1)) value (subs buffer (- index 1))))
 
-(defn insert-and-move 
-  [value]
+(defn insert-and-move [value]
     (let [new-val (insert (xy-to-buffer-position) value)]
       (inc-x)
-      new-val
-      )
-  )
+      new-val))
+
 (def keycode-to-string {
                         32 (fn [buf] 
                           (let [new-val (insert (xy-to-buffer-position) " ")]
@@ -180,25 +151,19 @@
                         40 (fn [buf] (move-down) buf)
                         })
 
-(defn draw-line-numbers
-  []
+(defn draw-line-numbers []
   (loop [i 1]
     (.fillText editor-ctx (str i) 10 (+ margin-y (* (- i 1) 20)) )
     (when (< i (num-of-lines))
-      (recur (+ i 1))
-      )
+      (recur (+ i 1)))))
 
-    ))
-
-(defn handle-input
-  [keyCode e]
+(defn handle-input [keyCode e]
   (do 
-      (.log js/console "xy-to-buffer-position" (xy-to-buffer-position))
-       (set! buffer (insert (xy-to-buffer-position) (.fromCharCode js/String (+ 32 keyCode))))
-       (inc-x)))
+    (.log js/console "xy-to-buffer-position" (xy-to-buffer-position))
+    (set! buffer (insert (xy-to-buffer-position) (.fromCharCode js/String (+ 32 keyCode))))
+    (inc-x)))
 
-(defn render-editor-ui 
-  []
+(defn render-editor-ui []
   (.strokeRect editor-ctx 0 0 width height)
   (set! (.-fillStyle editor-ctx) "rgb(2, 36, 60)");
 
@@ -208,24 +173,20 @@
   (.fillText editor-ctx (str "Line " cy ", Column " cx) 10 (- height 20))
   (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
 
-  (draw-line-numbers)
+  (draw-line-numbers))
 
-  )
-
-(defn draw-cursor
-  []
+(defn draw-cursor []
   (let [x (:x (get-cursor-drawing-pos))
         y (:y (get-cursor-drawing-pos)) ]
     
     (.fillRect editor-ctx x y caret-width caret-height)))
 
 (render-editor-ui)
-(defn render
-  []
+
+(defn render []
   (do
     (.clearRect editor-ctx 0 0 width height)
     (render-editor-ui)
-    (.log js/console (str "rendering!" buffer))
     (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
 
     (let [lines (.split buffer "\n")
@@ -238,8 +199,7 @@
           (recur pos-y (rest rec-lines))))
       (draw-cursor))))
 
-(defn on-input
-  [e]
+(defn on-input [e]
   (let [code (.-keyCode e)
         handler (get keycode-to-string code :handler-not-found) ]
     (.log js/console (str "key down: " code) e)
