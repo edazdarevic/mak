@@ -158,11 +158,26 @@
     (when (< i (num-of-lines))
       (recur (+ i 1)))))
 
+(defn count-trailing-whitespace [input]
+  (count (take-while #(= % " ") (reverse input))))
+
+(defn highlight-trailing-space []
+  (dotimes [i (num-of-lines)]
+    (let [line (nth (get-lines) (+ i 0))]
+      (when (> (count-trailing-whitespace line) 0)
+        (.save editor-ctx)
+        (set! (.-fillStyle editor-ctx) "rgba(255, 0, 0, .7)")
+        (.fillRect editor-ctx (+ margin-x (* (count line) char-width)) (+ margin-y (* (- i 0) 20)) char-width 20)
+        (.restore editor-ctx)))))
+
+
 (defn handle-input [keyCode e]
   (do 
     (.log js/console "xy-to-buffer-position" (xy-to-buffer-position))
     (set! buffer (insert (xy-to-buffer-position) (.fromCharCode js/String (+ 32 keyCode))))
     (inc-x)))
+
+
 
 (defn render-editor-ui []
   (.strokeRect editor-ctx 0 0 width height)
@@ -174,7 +189,8 @@
   (.fillText editor-ctx (str "Line " cy ", Column " cx) 10 (- height 20))
   (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
 
-  (draw-line-numbers))
+  (draw-line-numbers)
+  (highlight-trailing-space))
 
 (defn draw-cursor []
   (let [x (:x (get-cursor-drawing-pos))
