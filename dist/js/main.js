@@ -29475,6 +29475,7 @@ edin.main.caret_width = 2;
 edin.main.caret_height = 15;
 edin.main.margin_x = 35;
 edin.main.margin_y = 20;
+edin.main.tab_size = 2;
 edin.main.pos_y = edin.main.margin_y;
 edin.main.w = goog.dom.getWindow();
 edin.main.d = goog.dom.getDocument();
@@ -29524,8 +29525,8 @@ edin.main.move_x_forward = function move_x_forward() {
   }
 };
 edin.main.xy_to_buffer_position = function xy_to_buffer_position() {
-  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__7039_SHARP_) {
-    return cljs.core.count.call(null, p1__7039_SHARP_) + 1;
+  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__7063_SHARP_) {
+    return cljs.core.count.call(null, p1__7063_SHARP_) + 1;
   }, cljs.core.drop_last.call(null, 1, cljs.core.take.call(null, edin.main.cy, edin.main.get_lines.call(null)))));
   return temp_x + edin.main.cx;
 };
@@ -29582,7 +29583,18 @@ edin.main.insert = function insert(index, value) {
 };
 edin.main.insert_and_move = function insert_and_move(value) {
   var new_val = edin.main.insert.call(null, edin.main.xy_to_buffer_position.call(null), value);
-  edin.main.inc_x.call(null);
+  var n__4510__auto___7064 = cljs.core.count.call(null, value);
+  var n_7065 = 0;
+  while (true) {
+    if (n_7065 < n__4510__auto___7064) {
+      edin.main.inc_x.call(null);
+      var G__7066 = n_7065 + 1;
+      n_7065 = G__7066;
+      continue;
+    } else {
+    }
+    break;
+  }
   return new_val;
 };
 edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 39, 222, 221, 48, 32, 40, 91, 13, 187, 219, 189, 57, 9, 16, 38, 37, 8, 190], [function(buf) {
@@ -29619,7 +29631,7 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 39, 2
 }, function(buf) {
   return edin.main.insert_and_move.call(null, "(");
 }, function(buf) {
-  return edin.main.insert_and_move.call(null, cljs.core.apply.call(null, cljs.core.str, cljs.core.repeat.call(null, 4, " ")));
+  return edin.main.insert_and_move.call(null, cljs.core.apply.call(null, cljs.core.str, cljs.core.repeat.call(null, edin.main.tab_size, " ")));
 }, function(buf) {
   return buf;
 }, function(buf) {
@@ -29640,8 +29652,8 @@ edin.main.draw_line_numbers = function draw_line_numbers() {
   while (true) {
     edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(i), 10, edin.main.margin_y + (i - 1) * 20);
     if (i < edin.main.num_of_lines.call(null)) {
-      var G__7040 = i + 1;
-      i = G__7040;
+      var G__7067 = i + 1;
+      i = G__7067;
       continue;
     } else {
       return null;
@@ -29675,16 +29687,16 @@ edin.main.render = function render() {
   edin.main.editor_ctx.fillStyle = "rgb(255, 255, 255)";
   var lines = edin.main.buffer.split("\n");
   var text_width = edin.main.editor_ctx.measureText(cljs.core.last.call(null, lines)).width;
-  var y_7041 = edin.main.margin_y;
-  var rec_lines_7042 = lines;
+  var y_7068 = edin.main.margin_y;
+  var rec_lines_7069 = lines;
   while (true) {
-    if (cljs.core.seq.call(null, rec_lines_7042)) {
-      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_7042), edin.main.margin_x, y_7041);
-      edin.main.pos_y = y_7041 + 20;
-      var G__7043 = edin.main.pos_y;
-      var G__7044 = cljs.core.rest.call(null, rec_lines_7042);
-      y_7041 = G__7043;
-      rec_lines_7042 = G__7044;
+    if (cljs.core.seq.call(null, rec_lines_7069)) {
+      edin.main.editor_ctx.fillText(cljs.core.first.call(null, rec_lines_7069), edin.main.margin_x, y_7068);
+      edin.main.pos_y = y_7068 + 20;
+      var G__7070 = edin.main.pos_y;
+      var G__7071 = cljs.core.rest.call(null, rec_lines_7069);
+      y_7068 = G__7070;
+      rec_lines_7069 = G__7071;
       continue;
     } else {
     }

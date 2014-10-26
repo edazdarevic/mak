@@ -16,6 +16,7 @@
 (def caret-height 15)
 (def margin-x 35)
 (def margin-y 20)
+(def tab-size 2)
 
 (def pos-y margin-y)
 (def w (dom/getWindow))
@@ -96,7 +97,6 @@
 (defn get-cursor-drawing-pos []
   {:x (+ margin-x (* (- cx 1) char-width))  :y (* cy 20)})
 
-
 (defn remove-at [index] 
   (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
 
@@ -105,7 +105,8 @@
 
 (defn insert-and-move [value]
     (let [new-val (insert (xy-to-buffer-position) value)]
-      (inc-x)
+      (dotimes [n (count value)]
+        (inc-x))
       new-val))
 
 (def keycode-to-string {
@@ -145,7 +146,7 @@
                         39 (fn [buf] (move-x-forward) buf)
                         9 (fn 
                           [buf]
-                            (insert-and-move (apply str (repeat 4 " ")))
+                            (insert-and-move (apply str (repeat tab-size " ")))
                           )
                         38 (fn [buf] (move-up) buf)
                         40 (fn [buf] (move-down) buf)
