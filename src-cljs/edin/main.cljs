@@ -6,8 +6,8 @@
 (def editor-canvas (dom/getElement "editor"))
 (def editor-ctx (.getContext editor-canvas "2d"))
 
-(def cx 0)
-(def cy 0)
+(def cx 1)
+(def cy 1)
 
 (def width 600)
 (def height 600)
@@ -22,16 +22,19 @@
 (def char-width (.-width (.measureText editor-ctx "a")))
 (def buffer "")
 
+(set! (.-textBaseline editor-ctx) "top")
+
 (defn get-lines 
   []
   (.split buffer "\n"))
+
 (defn num-of-lines
   []
   (count (get-lines)))
 
 (defn len-at-line
   [n]
-  (let [line (nth (get-lines) n)]
+  (let [line (nth (get-lines) (- n 1))]
     (count line)))
 
 
@@ -62,19 +65,36 @@
 ; move x forward only if x is not greater then len of current line
 (defn move-x-forward 
   []
-  (when (< (+ cx 1) (len-at-line cy)
-           (inc-x))))
+  (if (<= (+ cx 0) (len-at-line cy))
+           (inc-x)
+           (when (<= (+ cy 1) (num-of-lines)) 
+            (inc-y)
+            (move-x-to 1)
 
+            )
+           ))
+
+(defn xy-to-buffer-position
+  []
+  (let [temp-x (reduce + (map #(+ (count %) 1) (drop-last 1 (get-lines))))]
+    (+ temp-x cx)
+    )
+  )
 (defn move-y-backward
   []
-  (when (>= (- cy 1) 0 )
-    (dec-y)))
+  (when (>= (- cy 1) 1 )
+    (dec-y)
+    ; need to reposition x maybe
+      (move-x-to (+ 1 (len-at-line cy)))
+      (.log js/console (str "NEWPOSITON IN THE BUFFER IS" (xy-to-buffer-position)))
+    ))
 ; move x backward; if not try to move y backward
 (defn move-x-backward 
   []
-  (if (< (- cx 1) 0)
+  (if (< (- cx 1) 1)
     (move-y-backward)
-    (dec-x)))
+    (dec-x)
+    ))
 
 
 ; check for number of lines
@@ -84,11 +104,20 @@
 
 (defn get-cursor-drawing-pos
   []
-  {:x (+ 20 (* (+ cx 1)   char-width))  :y (* (+ cy 1) 15)})
+  {:x (+ 20 (* (- cx 1) char-width))  :y (* cy 20)})
 
+
+(defn remove-at [index] (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
+
+(defn insert [index value] (str (subs buffer 0 (- index 1)) value (subs buffer (- index 1))))
 
 (def keycode-to-string {
-                        32 (fn [buf] (str buf " "))
+                        32 (fn [buf] 
+                          (let [new-val (insert (xy-to-buffer-position) " ")]
+                            (inc-x)
+                            new-val
+                            )
+                          )
                         57 (fn [buf] (str buf "("))
                         48 (fn [buf] (str buf ")"))
                         219 (fn [buf] (str buf "{"))
@@ -98,24 +127,37 @@
                         91 (fn [buf] (str buf "'"))
                         186 (fn [buf] (str buf ";"))
                         187 (fn [buf] (str buf "="))
-                        190 (fn [buf] (str buf "."))
-                        8 (fn [buf] (move-x-backward) (reduce str (take (- (count buf) 1) buf)))
-                        13 (fn [buf] (move-y-forward) (move-x-to 0) (str buf  "\n"))
+            
+                        8 (fn [buf]  
+                          (let [new-val (remove-at (- (xy-to-buffer-position) 1) )]
+                            (move-x-backward)
+                            new-val
+                            )
+
+                          )
+                        ; enter
+                        13 (fn 
+                          [buf] 
+                          (let [new-val (insert (xy-to-buffer-position) "\n")]
+                           (inc-y)
+                           (move-x-to 1)
+                           new-val
+                          ))
                         37 (fn [buf] (move-x-backward) buf)
                         39 (fn [buf] (move-x-forward) buf)
-                       ; 9 #(str % "\t")
                         })
 
 (defn handle-input
   [keyCode e]
   (do 
-       (set! buffer (str buffer (.fromCharCode js/String (+ 32 keyCode))))     
-       (move-x-forward)))
+      (.log js/console "xy-to-buffer-position" (xy-to-buffer-position))
+       (set! buffer (insert (xy-to-buffer-position) (.fromCharCode js/String (+ 32 keyCode))))
+       (inc-x)))
 
 (defn render-editor-ui 
   []
   (.strokeRect editor-ctx 0 0 600 600)
-  (.fillText editor-ctx (str cx "," cy) 20 580))
+  (.fillText editor-ctx (str "Line " cy ", Column " cx) 20 580))
 
 (defn draw-cursor
   []
