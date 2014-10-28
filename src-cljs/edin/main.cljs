@@ -9,7 +9,7 @@
 (def cx 1)
 (def cy 1)
 
-(def width 1200)
+(def width 1000)
 (def height 600)
 
 (def caret-width 2)
@@ -21,7 +21,7 @@
 (def pos-y margin-y)
 (def w (dom/getWindow))
 (def d (dom/getDocument))
-(set! (.-font editor-ctx) "13px Monaco")
+(set! (.-font editor-ctx) "13px Monospace")
 (def char-width (.-width (.measureText editor-ctx "a")))
 (def buffer "")
 
@@ -178,43 +178,77 @@
     (inc-x)))
 
 
-
-(defn render-editor-ui []
-  (.strokeRect editor-ctx 0 0 width height)
-  (set! (.-fillStyle editor-ctx) "rgb(2, 36, 60)");
-
-  (.fillRect editor-ctx 0 0 width height)
-  (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
-
-  (.fillText editor-ctx (str "Line " cy ", Column " cx) 10 (- height 20))
-  (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
-
-  (draw-line-numbers)
-  (highlight-trailing-space))
-
 (defn draw-cursor []
   (let [x (:x (get-cursor-drawing-pos))
         y (:y (get-cursor-drawing-pos)) ]
-    
     (.fillRect editor-ctx x y caret-width caret-height)))
 
-(render-editor-ui)
-
-(defn render []
-  (do
-    (.clearRect editor-ctx 0 0 width height)
-    (render-editor-ui)
-    (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
-
-    (let [lines (.split buffer "\n")
-          text-width (.-width (.measureText editor-ctx (last lines))) ]
+(defn render-text [ctx]
+  (let [lines (.split buffer "\n")
+          text-width (.-width (.measureText ctx (last lines))) ]
       (loop [y margin-y 
              rec-lines lines]
         (when (seq rec-lines)
-          (.fillText editor-ctx (first rec-lines) margin-x y)
+          (.fillText ctx (first rec-lines) margin-x y)
           (set! pos-y (+ y 20))
           (recur pos-y (rest rec-lines))))
-      (draw-cursor))))
+      (draw-cursor)))
+
+(def minimap-width 150)
+
+(defn render-minimap []
+  (set! (.-strokeStyle editor-ctx) "rgba(255, 255, 255, 1)");
+  ;(.fillRect editor-ctx (- width minimap-width) 0 minimap-width height)
+  (.log js/console "rendering minmap")
+  (.beginPath editor-ctx)
+  (.moveTo editor-ctx (- width minimap-width) 0)
+  (.lineTo editor-ctx (- width minimap-width) height)
+  (.stroke editor-ctx)
+  
+
+  (let [new-canvas (.createElement js/document "canvas")
+        new-ctx (.getContext new-canvas "2d")]
+    (set! (.-width new-canvas) width)
+    (set! (.-height new-canvas) height)
+    (let [sf (/ minimap-width width)]
+      (.log js/console (str "Scale factor is:" sf))
+      (.scale new-ctx sf sf)
+      (set! (.-fillStyle new-ctx) "rgba(255, 255, 255, 1)");
+      (render-text new-ctx)
+      (.drawImage editor-ctx new-canvas (- width minimap-width) 0)
+
+      )))
+
+(defn render-editor-ui []
+  ; background color
+  (set! (.-fillStyle editor-ctx) "rgb(2, 36, 60)");
+  (.fillRect editor-ctx 0 0 width height)
+
+  ; text color
+  (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
+  (.fillText editor-ctx (str "Line " cy ", Column " cx) 10 (- height 20))
+
+  ; line numbers
+  (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
+  (draw-line-numbers)
+
+  ; trailing spaces
+  (highlight-trailing-space)
+
+  (render-minimap)
+  )
+
+
+(render-editor-ui)
+
+
+(defn render []
+  (do
+    (.log js/console "Clearing!")
+    (.clearRect editor-ctx 0 0 width height)
+    (render-editor-ui)
+    (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
+    (render-text editor-ctx)))
 
 (defn on-input [e]
   (let [code (.-keyCode e)
