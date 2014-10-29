@@ -31,14 +31,46 @@
 (set! (.-textBaseline editor-ctx) "top")
 (set! (.-fillStyle editor-ctx) "rgb(2, 36, 60)");
 
-(defn get-lines []
+(defn get-visible-range []
+  (when (not (<= view-start cy view-end))
+    (when (< cy view-start)
+      (let [offset (- cy view-start)]
+        (set! view-start (+ view-start offset))
+        (set! view-end (+ view-end offset))
+        )
+      )
+    (when (> cy view-end)
+      (let [offset (- cy view-end)]
+        (set! view-start (+ view-start offset))
+        (set! view-end (+ view-end offset))
+        )
+      )
+    )
+  [view-start view-end]
+  )
+
+(defn get-all-lines []
   (.split buffer "\n"))
 
-(defn num-of-lines []
-  (count (get-lines)))
+(defn get-viewport-lines []
+  (let [[s e] (get-visible-range)]
+    (take max-lines (drop (- s 1) (.split buffer "\n")))    
+    )
+  )
+;(defn get-lines []
+  ;(let [[s e] (get-visible-range)]
+    ;(take max-lines (drop (- s 1) (.split buffer "\n")))    
+    ;)
+  ;)
+
+(defn num-of-all-lines []
+  (count (.split buffer "\n")))
+
+(defn num-of-viewport-lines []
+  (count (.split buffer "\n")))
 
 (defn len-at-line [n]
-  (let [line (nth (get-lines) (- n 1))]
+  (let [line (nth (.split buffer "\n") (- n 1))]
     (count line)))
 
 (defn move-x-to [x]
@@ -63,12 +95,13 @@
 (defn move-x-forward []
   (if (<= cx (len-at-line cy))
            (inc-x)
-           (when (<= (+ cy 1) (num-of-lines)) 
+           (when (<= (+ cy 1) (num-of-viewport-lines)) 
             (inc-y)
             (move-x-to 1))))
 
+; need to reconsider with the viewport stuff
 (defn xy-to-buffer-position []
-  (let [temp-x (reduce + (map #(+ (count %) 1) (drop-last 1 (take cy (get-lines)))))]
+  (let [temp-x (reduce + (map #(+ (count %) 1) (drop-last 1 (take cy (get-all-lines)))))]
     (+ temp-x cx)))
 
 (defn move-y-backward []
@@ -92,13 +125,13 @@
       (move-x-to (+ 1 (len-at-line cy))))))
 
 (defn move-down []
-  (when (< cy (num-of-lines))
+  (when (< cy (num-of-all-lines))
     (inc-y)
     (when (> cx (len-at-line cy))
       (move-x-to (+ 1 (len-at-line cy))))))
 
 (defn get-cursor-drawing-pos []
-  {:x (+ margin-x (* (- cx 1) char-width))  :y (* cy 20)})
+  {:x (+ margin-x (* (- cx 1) char-width))  :y (* (min cy max-lines) 20)})
 
 (defn remove-at [index] 
   (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
@@ -156,17 +189,19 @@
                         })
 
 (defn draw-line-numbers []
-  (loop [i 1]
-    (.fillText editor-ctx (str i) 10 (+ margin-y (* (- i 1) 20)) )
-    (when (< i (num-of-lines))
-      (recur (+ i 1)))))
+  (loop [i view-start
+         ii 1
+         ]
+    (.fillText editor-ctx (str i) 10 (+ margin-y (* (- ii 1) 20)) )
+    (when (< ii (min max-lines (num-of-all-lines)))
+      (recur (+ i 1) (+ ii 1) ))))
 
 (defn count-trailing-whitespace [input]
   (count (take-while #(= % " ") (reverse input))))
 
 (defn highlight-trailing-space []
-  (dotimes [i (num-of-lines)]
-    (let [line (nth (get-lines) (+ i 0))]
+  (dotimes [i (num-of-all-lines)]
+    (let [line (nth (get-all-lines) (+ i 0))]
       (when (> (count-trailing-whitespace line) 0)
         (.save editor-ctx)
         (set! (.-fillStyle editor-ctx) "rgba(255, 0, 0, .7)")
@@ -187,7 +222,7 @@
     (.fillRect editor-ctx x y caret-width caret-height)))
 
 (defn render-text [ctx]
-  (let [lines (.split buffer "\n")
+  (let [lines (get-viewport-lines)
           text-width (.-width (.measureText ctx (last lines))) ]
       (loop [y margin-y 
              rec-lines lines]
@@ -229,14 +264,14 @@
 
   ; text color
   (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
-  (.fillText editor-ctx (str "Line " cy ", Column " cx) 10 (- height 20))
+  (.fillText editor-ctx (str "Line " (+ (- cy 0) 0) ", Column " cx) 10 (- height 20))
 
   ; line numbers
   (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
   (draw-line-numbers)
 
   ; trailing spaces
-  (highlight-trailing-space)
+  ;(highlight-trailing-space)
 
   (render-minimap)
   )
@@ -244,23 +279,6 @@
 
 (render-editor-ui)
 
-(defn get-visible-range []
-  (when (not (<= view-start cy view-end))
-    (when (< cy view-start)
-      (let [offset (- cy view-start)]
-        (set! view-start (+ view-start offset))
-        (set! view-end (+ view-end offset))
-        )
-      )
-    (when (> cy view-end)
-      (let [offset (- cy view-end)]
-        (set! view-start (+ view-start offset))
-        (set! view-end (+ view-end offset))
-        )
-      )
-    )
-  [view-start view-end]
-  )
 
 (defn render []
   (do
@@ -281,6 +299,7 @@
      (when (not (= handler :handler-not-found))
        (.log js/console "handling event")
        (set! buffer (handler buffer)))
+     (get-visible-range)
      (render)))
 
 (events/listen d (.-KEYDOWN events/EventType) on-input)

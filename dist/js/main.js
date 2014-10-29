@@ -29487,14 +29487,41 @@ edin.main.char_width = edin.main.editor_ctx.measureText("a").width;
 edin.main.buffer = "";
 edin.main.editor_ctx.textBaseline = "top";
 edin.main.editor_ctx.fillStyle = "rgb(2, 36, 60)";
-edin.main.get_lines = function get_lines() {
+edin.main.get_visible_range = function get_visible_range() {
+  if (!(edin.main.view_start <= edin.main.cy && edin.main.cy <= edin.main.view_end)) {
+    if (edin.main.cy < edin.main.view_start) {
+      var offset_6662 = edin.main.cy - edin.main.view_start;
+      edin.main.view_start = edin.main.view_start + offset_6662;
+      edin.main.view_end = edin.main.view_end + offset_6662;
+    } else {
+    }
+    if (edin.main.cy > edin.main.view_end) {
+      var offset_6663 = edin.main.cy - edin.main.view_end;
+      edin.main.view_start = edin.main.view_start + offset_6663;
+      edin.main.view_end = edin.main.view_end + offset_6663;
+    } else {
+    }
+  } else {
+  }
+  return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [edin.main.view_start, edin.main.view_end], null);
+};
+edin.main.get_all_lines = function get_all_lines() {
   return edin.main.buffer.split("\n");
 };
-edin.main.num_of_lines = function num_of_lines() {
-  return cljs.core.count.call(null, edin.main.get_lines.call(null));
+edin.main.get_viewport_lines = function get_viewport_lines() {
+  var vec__6665 = edin.main.get_visible_range.call(null);
+  var s = cljs.core.nth.call(null, vec__6665, 0, null);
+  var e = cljs.core.nth.call(null, vec__6665, 1, null);
+  return cljs.core.take.call(null, edin.main.max_lines, cljs.core.drop.call(null, s - 1, edin.main.buffer.split("\n")));
+};
+edin.main.num_of_all_lines = function num_of_all_lines() {
+  return cljs.core.count.call(null, edin.main.buffer.split("\n"));
+};
+edin.main.num_of_viewport_lines = function num_of_viewport_lines() {
+  return cljs.core.count.call(null, edin.main.buffer.split("\n"));
 };
 edin.main.len_at_line = function len_at_line(n) {
-  var line = cljs.core.nth.call(null, edin.main.get_lines.call(null), n - 1);
+  var line = cljs.core.nth.call(null, edin.main.buffer.split("\n"), n - 1);
   return cljs.core.count.call(null, line);
 };
 edin.main.move_x_to = function move_x_to(x) {
@@ -29519,7 +29546,7 @@ edin.main.move_x_forward = function move_x_forward() {
   if (edin.main.cx <= edin.main.len_at_line.call(null, edin.main.cy)) {
     return edin.main.inc_x.call(null);
   } else {
-    if (edin.main.cy + 1 <= edin.main.num_of_lines.call(null)) {
+    if (edin.main.cy + 1 <= edin.main.num_of_viewport_lines.call(null)) {
       edin.main.inc_y.call(null);
       return edin.main.move_x_to.call(null, 1);
     } else {
@@ -29528,9 +29555,9 @@ edin.main.move_x_forward = function move_x_forward() {
   }
 };
 edin.main.xy_to_buffer_position = function xy_to_buffer_position() {
-  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__6037_SHARP_) {
-    return cljs.core.count.call(null, p1__6037_SHARP_) + 1;
-  }, cljs.core.drop_last.call(null, 1, cljs.core.take.call(null, edin.main.cy, edin.main.get_lines.call(null)))));
+  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__6666_SHARP_) {
+    return cljs.core.count.call(null, p1__6666_SHARP_) + 1;
+  }, cljs.core.drop_last.call(null, 1, cljs.core.take.call(null, edin.main.cy, edin.main.get_all_lines.call(null)))));
   return temp_x + edin.main.cx;
 };
 edin.main.move_y_backward = function move_y_backward() {
@@ -29564,7 +29591,7 @@ edin.main.move_up = function move_up() {
   }
 };
 edin.main.move_down = function move_down() {
-  if (edin.main.cy < edin.main.num_of_lines.call(null)) {
+  if (edin.main.cy < edin.main.num_of_all_lines.call(null)) {
     edin.main.inc_y.call(null);
     if (edin.main.cx > edin.main.len_at_line.call(null, edin.main.cy)) {
       return edin.main.move_x_to.call(null, 1 + edin.main.len_at_line.call(null, edin.main.cy));
@@ -29576,7 +29603,11 @@ edin.main.move_down = function move_down() {
   }
 };
 edin.main.get_cursor_drawing_pos = function get_cursor_drawing_pos() {
-  return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "x", "x", 2099068185), edin.main.margin_x + (edin.main.cx - 1) * edin.main.char_width, new cljs.core.Keyword(null, "y", "y", -1757859776), edin.main.cy * 20], null);
+  return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "x", "x", 2099068185), edin.main.margin_x + (edin.main.cx - 1) * edin.main.char_width, new cljs.core.Keyword(null, "y", "y", -1757859776), function() {
+    var x__3954__auto__ = edin.main.cy;
+    var y__3955__auto__ = edin.main.max_lines;
+    return x__3954__auto__ < y__3955__auto__ ? x__3954__auto__ : y__3955__auto__;
+  }() * 20], null);
 };
 edin.main.remove_at = function remove_at(index) {
   return "" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.subs.call(null, edin.main.buffer, 0, index - 1)) + cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.subs.call(null, edin.main.buffer, index - 1 + 1));
@@ -29586,13 +29617,13 @@ edin.main.insert = function insert(index, value) {
 };
 edin.main.insert_and_move = function insert_and_move(value) {
   var new_val = edin.main.insert.call(null, edin.main.xy_to_buffer_position.call(null), value);
-  var n__4510__auto___6038 = cljs.core.count.call(null, value);
-  var n_6039 = 0;
+  var n__4510__auto___6667 = cljs.core.count.call(null, value);
+  var n_6668 = 0;
   while (true) {
-    if (n_6039 < n__4510__auto___6038) {
+    if (n_6668 < n__4510__auto___6667) {
       edin.main.inc_x.call(null);
-      var G__6040 = n_6039 + 1;
-      n_6039 = G__6040;
+      var G__6669 = n_6668 + 1;
+      n_6668 = G__6669;
       continue;
     } else {
     }
@@ -29651,12 +29682,19 @@ edin.main.keycode_to_string = cljs.core.PersistentHashMap.fromArrays([186, 39, 2
   return edin.main.insert_and_move.call(null, ".");
 }]);
 edin.main.draw_line_numbers = function draw_line_numbers() {
-  var i = 1;
+  var i = edin.main.view_start;
+  var ii = 1;
   while (true) {
-    edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(i), 10, edin.main.margin_y + (i - 1) * 20);
-    if (i < edin.main.num_of_lines.call(null)) {
-      var G__6041 = i + 1;
-      i = G__6041;
+    edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(i), 10, edin.main.margin_y + (ii - 1) * 20);
+    if (ii < function() {
+      var x__3954__auto__ = edin.main.max_lines;
+      var y__3955__auto__ = edin.main.num_of_all_lines.call(null);
+      return x__3954__auto__ < y__3955__auto__ ? x__3954__auto__ : y__3955__auto__;
+    }()) {
+      var G__6670 = i + 1;
+      var G__6671 = ii + 1;
+      i = G__6670;
+      ii = G__6671;
       continue;
     } else {
       return null;
@@ -29665,25 +29703,25 @@ edin.main.draw_line_numbers = function draw_line_numbers() {
   }
 };
 edin.main.count_trailing_whitespace = function count_trailing_whitespace(input) {
-  return cljs.core.count.call(null, cljs.core.take_while.call(null, function(p1__6042_SHARP_) {
-    return cljs.core._EQ_.call(null, p1__6042_SHARP_, " ");
+  return cljs.core.count.call(null, cljs.core.take_while.call(null, function(p1__6672_SHARP_) {
+    return cljs.core._EQ_.call(null, p1__6672_SHARP_, " ");
   }, cljs.core.reverse.call(null, input)));
 };
 edin.main.highlight_trailing_space = function highlight_trailing_space() {
-  var n__4510__auto__ = edin.main.num_of_lines.call(null);
+  var n__4510__auto__ = edin.main.num_of_all_lines.call(null);
   var i = 0;
   while (true) {
     if (i < n__4510__auto__) {
-      var line_6043 = cljs.core.nth.call(null, edin.main.get_lines.call(null), i + 0);
-      if (edin.main.count_trailing_whitespace.call(null, line_6043) > 0) {
+      var line_6673 = cljs.core.nth.call(null, edin.main.get_all_lines.call(null), i + 0);
+      if (edin.main.count_trailing_whitespace.call(null, line_6673) > 0) {
         edin.main.editor_ctx.save();
         edin.main.editor_ctx.fillStyle = "rgba(255, 0, 0, .7)";
-        edin.main.editor_ctx.fillRect(edin.main.margin_x + cljs.core.count.call(null, line_6043) * edin.main.char_width, edin.main.margin_y + (i - 0) * 20, edin.main.char_width, 20);
+        edin.main.editor_ctx.fillRect(edin.main.margin_x + cljs.core.count.call(null, line_6673) * edin.main.char_width, edin.main.margin_y + (i - 0) * 20, edin.main.char_width, 20);
         edin.main.editor_ctx.restore();
       } else {
       }
-      var G__6044 = i + 1;
-      i = G__6044;
+      var G__6674 = i + 1;
+      i = G__6674;
       continue;
     } else {
       return null;
@@ -29702,18 +29740,18 @@ edin.main.draw_cursor = function draw_cursor() {
   return edin.main.editor_ctx.fillRect(x, y, edin.main.caret_width, edin.main.caret_height);
 };
 edin.main.render_text = function render_text(ctx) {
-  var lines = edin.main.buffer.split("\n");
+  var lines = edin.main.get_viewport_lines.call(null);
   var text_width = ctx.measureText(cljs.core.last.call(null, lines)).width;
-  var y_6045 = edin.main.margin_y;
-  var rec_lines_6046 = lines;
+  var y_6675 = edin.main.margin_y;
+  var rec_lines_6676 = lines;
   while (true) {
-    if (cljs.core.seq.call(null, rec_lines_6046)) {
-      ctx.fillText(cljs.core.first.call(null, rec_lines_6046), edin.main.margin_x, y_6045);
-      edin.main.pos_y = y_6045 + 20;
-      var G__6047 = edin.main.pos_y;
-      var G__6048 = cljs.core.rest.call(null, rec_lines_6046);
-      y_6045 = G__6047;
-      rec_lines_6046 = G__6048;
+    if (cljs.core.seq.call(null, rec_lines_6676)) {
+      ctx.fillText(cljs.core.first.call(null, rec_lines_6676), edin.main.margin_x, y_6675);
+      edin.main.pos_y = y_6675 + 20;
+      var G__6677 = edin.main.pos_y;
+      var G__6678 = cljs.core.rest.call(null, rec_lines_6676);
+      y_6675 = G__6677;
+      rec_lines_6676 = G__6678;
       continue;
     } else {
     }
@@ -29744,31 +29782,12 @@ edin.main.render_editor_ui = function render_editor_ui() {
   edin.main.editor_ctx.fillStyle = "rgb(2, 36, 60)";
   edin.main.editor_ctx.fillRect(0, 0, edin.main.width, edin.main.height);
   edin.main.editor_ctx.fillStyle = "rgb(255, 255, 255)";
-  edin.main.editor_ctx.fillText("Line " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cy) + ", Column " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cx), 10, edin.main.height - 20);
+  edin.main.editor_ctx.fillText("Line " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cy - 0 + 0) + ", Column " + cljs.core.str.cljs$core$IFn$_invoke$arity$1(edin.main.cx), 10, edin.main.height - 20);
   edin.main.editor_ctx.fillStyle = "rgb(96, 96, 96)";
   edin.main.draw_line_numbers.call(null);
-  edin.main.highlight_trailing_space.call(null);
   return edin.main.render_minimap.call(null);
 };
 edin.main.render_editor_ui.call(null);
-edin.main.get_visible_range = function get_visible_range() {
-  if (!(edin.main.view_start <= edin.main.cy && edin.main.cy <= edin.main.view_end)) {
-    if (edin.main.cy < edin.main.view_start) {
-      var offset_6049 = edin.main.cy - edin.main.view_start;
-      edin.main.view_start = edin.main.view_start + offset_6049;
-      edin.main.view_end = edin.main.view_end + offset_6049;
-    } else {
-    }
-    if (edin.main.cy > edin.main.view_end) {
-      var offset_6050 = edin.main.cy - edin.main.view_end;
-      edin.main.view_start = edin.main.view_start + offset_6050;
-      edin.main.view_end = edin.main.view_end + offset_6050;
-    } else {
-    }
-  } else {
-  }
-  return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [edin.main.view_start, edin.main.view_end], null);
-};
 edin.main.render = function render() {
   console.log("Clearing!");
   edin.main.editor_ctx.clearRect(0, 0, edin.main.width, edin.main.height);
@@ -29791,6 +29810,7 @@ edin.main.on_input = function on_input(e) {
     edin.main.buffer = handler.call(null, edin.main.buffer);
   } else {
   }
+  edin.main.get_visible_range.call(null);
   return edin.main.render.call(null);
 };
 goog.events.listen(edin.main.d, goog.events.EventType.KEYDOWN, edin.main.on_input);
