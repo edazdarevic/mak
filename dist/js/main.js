@@ -29467,6 +29467,9 @@ goog.require("goog.dom");
 edin.main.NAME = "edin text editor";
 edin.main.editor_canvas = goog.dom.getElement("editor");
 edin.main.editor_ctx = edin.main.editor_canvas.getContext("2d");
+edin.main.max_lines = 28;
+edin.main.view_start = 1;
+edin.main.view_end = edin.main.max_lines;
 edin.main.cx = 1;
 edin.main.cy = 1;
 edin.main.width = 1E3;
@@ -29525,8 +29528,8 @@ edin.main.move_x_forward = function move_x_forward() {
   }
 };
 edin.main.xy_to_buffer_position = function xy_to_buffer_position() {
-  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__6013_SHARP_) {
-    return cljs.core.count.call(null, p1__6013_SHARP_) + 1;
+  var temp_x = cljs.core.reduce.call(null, cljs.core._PLUS_, cljs.core.map.call(null, function(p1__6037_SHARP_) {
+    return cljs.core.count.call(null, p1__6037_SHARP_) + 1;
   }, cljs.core.drop_last.call(null, 1, cljs.core.take.call(null, edin.main.cy, edin.main.get_lines.call(null)))));
   return temp_x + edin.main.cx;
 };
@@ -29583,13 +29586,13 @@ edin.main.insert = function insert(index, value) {
 };
 edin.main.insert_and_move = function insert_and_move(value) {
   var new_val = edin.main.insert.call(null, edin.main.xy_to_buffer_position.call(null), value);
-  var n__4510__auto___6014 = cljs.core.count.call(null, value);
-  var n_6015 = 0;
+  var n__4510__auto___6038 = cljs.core.count.call(null, value);
+  var n_6039 = 0;
   while (true) {
-    if (n_6015 < n__4510__auto___6014) {
+    if (n_6039 < n__4510__auto___6038) {
       edin.main.inc_x.call(null);
-      var G__6016 = n_6015 + 1;
-      n_6015 = G__6016;
+      var G__6040 = n_6039 + 1;
+      n_6039 = G__6040;
       continue;
     } else {
     }
@@ -29652,8 +29655,8 @@ edin.main.draw_line_numbers = function draw_line_numbers() {
   while (true) {
     edin.main.editor_ctx.fillText("" + cljs.core.str.cljs$core$IFn$_invoke$arity$1(i), 10, edin.main.margin_y + (i - 1) * 20);
     if (i < edin.main.num_of_lines.call(null)) {
-      var G__6017 = i + 1;
-      i = G__6017;
+      var G__6041 = i + 1;
+      i = G__6041;
       continue;
     } else {
       return null;
@@ -29662,8 +29665,8 @@ edin.main.draw_line_numbers = function draw_line_numbers() {
   }
 };
 edin.main.count_trailing_whitespace = function count_trailing_whitespace(input) {
-  return cljs.core.count.call(null, cljs.core.take_while.call(null, function(p1__6018_SHARP_) {
-    return cljs.core._EQ_.call(null, p1__6018_SHARP_, " ");
+  return cljs.core.count.call(null, cljs.core.take_while.call(null, function(p1__6042_SHARP_) {
+    return cljs.core._EQ_.call(null, p1__6042_SHARP_, " ");
   }, cljs.core.reverse.call(null, input)));
 };
 edin.main.highlight_trailing_space = function highlight_trailing_space() {
@@ -29671,16 +29674,16 @@ edin.main.highlight_trailing_space = function highlight_trailing_space() {
   var i = 0;
   while (true) {
     if (i < n__4510__auto__) {
-      var line_6019 = cljs.core.nth.call(null, edin.main.get_lines.call(null), i + 0);
-      if (edin.main.count_trailing_whitespace.call(null, line_6019) > 0) {
+      var line_6043 = cljs.core.nth.call(null, edin.main.get_lines.call(null), i + 0);
+      if (edin.main.count_trailing_whitespace.call(null, line_6043) > 0) {
         edin.main.editor_ctx.save();
         edin.main.editor_ctx.fillStyle = "rgba(255, 0, 0, .7)";
-        edin.main.editor_ctx.fillRect(edin.main.margin_x + cljs.core.count.call(null, line_6019) * edin.main.char_width, edin.main.margin_y + (i - 0) * 20, edin.main.char_width, 20);
+        edin.main.editor_ctx.fillRect(edin.main.margin_x + cljs.core.count.call(null, line_6043) * edin.main.char_width, edin.main.margin_y + (i - 0) * 20, edin.main.char_width, 20);
         edin.main.editor_ctx.restore();
       } else {
       }
-      var G__6020 = i + 1;
-      i = G__6020;
+      var G__6044 = i + 1;
+      i = G__6044;
       continue;
     } else {
       return null;
@@ -29701,16 +29704,16 @@ edin.main.draw_cursor = function draw_cursor() {
 edin.main.render_text = function render_text(ctx) {
   var lines = edin.main.buffer.split("\n");
   var text_width = ctx.measureText(cljs.core.last.call(null, lines)).width;
-  var y_6021 = edin.main.margin_y;
-  var rec_lines_6022 = lines;
+  var y_6045 = edin.main.margin_y;
+  var rec_lines_6046 = lines;
   while (true) {
-    if (cljs.core.seq.call(null, rec_lines_6022)) {
-      ctx.fillText(cljs.core.first.call(null, rec_lines_6022), edin.main.margin_x, y_6021);
-      edin.main.pos_y = y_6021 + 20;
-      var G__6023 = edin.main.pos_y;
-      var G__6024 = cljs.core.rest.call(null, rec_lines_6022);
-      y_6021 = G__6023;
-      rec_lines_6022 = G__6024;
+    if (cljs.core.seq.call(null, rec_lines_6046)) {
+      ctx.fillText(cljs.core.first.call(null, rec_lines_6046), edin.main.margin_x, y_6045);
+      edin.main.pos_y = y_6045 + 20;
+      var G__6047 = edin.main.pos_y;
+      var G__6048 = cljs.core.rest.call(null, rec_lines_6046);
+      y_6045 = G__6047;
+      rec_lines_6046 = G__6048;
       continue;
     } else {
     }
@@ -29748,6 +29751,24 @@ edin.main.render_editor_ui = function render_editor_ui() {
   return edin.main.render_minimap.call(null);
 };
 edin.main.render_editor_ui.call(null);
+edin.main.get_visible_range = function get_visible_range() {
+  if (!(edin.main.view_start <= edin.main.cy && edin.main.cy <= edin.main.view_end)) {
+    if (edin.main.cy < edin.main.view_start) {
+      var offset_6049 = edin.main.cy - edin.main.view_start;
+      edin.main.view_start = edin.main.view_start + offset_6049;
+      edin.main.view_end = edin.main.view_end + offset_6049;
+    } else {
+    }
+    if (edin.main.cy > edin.main.view_end) {
+      var offset_6050 = edin.main.cy - edin.main.view_end;
+      edin.main.view_start = edin.main.view_start + offset_6050;
+      edin.main.view_end = edin.main.view_end + offset_6050;
+    } else {
+    }
+  } else {
+  }
+  return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [edin.main.view_start, edin.main.view_end], null);
+};
 edin.main.render = function render() {
   console.log("Clearing!");
   edin.main.editor_ctx.clearRect(0, 0, edin.main.width, edin.main.height);

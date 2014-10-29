@@ -6,6 +6,9 @@
 (def editor-canvas (dom/getElement "editor"))
 (def editor-ctx (.getContext editor-canvas "2d"))
 
+(def max-lines 28)
+(def view-start 1)
+(def view-end max-lines)
 (def cx 1)
 (def cy 1)
 
@@ -241,6 +244,23 @@
 
 (render-editor-ui)
 
+(defn get-visible-range []
+  (when (not (<= view-start cy view-end))
+    (when (< cy view-start)
+      (let [offset (- cy view-start)]
+        (set! view-start (+ view-start offset))
+        (set! view-end (+ view-end offset))
+        )
+      )
+    (when (> cy view-end)
+      (let [offset (- cy view-end)]
+        (set! view-start (+ view-start offset))
+        (set! view-end (+ view-end offset))
+        )
+      )
+    )
+  [view-start view-end]
+  )
 
 (defn render []
   (do
