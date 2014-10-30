@@ -54,12 +54,12 @@
 
 (defn get-viewport-lines []
   (let [[s e] (get-visible-range)]
-    (take max-lines (drop (- s 1) (.split buffer "\n")))    
+    (take max-lines (drop (- s 1) (.split buffer "\n")))
     )
   )
 ;(defn get-lines []
   ;(let [[s e] (get-visible-range)]
-    ;(take max-lines (drop (- s 1) (.split buffer "\n")))    
+    ;(take max-lines (drop (- s 1) (.split buffer "\n")))
     ;)
   ;)
 
@@ -95,7 +95,7 @@
 (defn move-x-forward []
   (if (<= cx (len-at-line cy))
            (inc-x)
-           (when (<= (+ cy 1) (num-of-viewport-lines)) 
+           (when (<= (+ cy 1) (num-of-viewport-lines))
             (inc-y)
             (move-x-to 1))))
 
@@ -119,6 +119,7 @@
   (inc-y))
 
 (defn move-up []
+  (.log js/console "moving up")
   (when (>= (- cy 1) 1)
     (dec-y)
     (when (> cx (len-at-line cy))
@@ -131,9 +132,9 @@
       (move-x-to (+ 1 (len-at-line cy))))))
 
 (defn get-cursor-drawing-pos []
-  {:x (+ margin-x (* (- cx 1) char-width))  :y (* (min cy max-lines) 20)})
+  {:x (+ margin-x (* (- cx 1) char-width))  :y (* (- (+ cy 1) view-start) 20)})
 
-(defn remove-at [index] 
+(defn remove-at [index]
   (str (subs buffer 0 (- index 1)) (subs buffer (+ (- index 1) 1))))
 
 (defn insert [index value]
@@ -146,7 +147,7 @@
       new-val))
 
 (def keycode-to-string {
-                        32 (fn [buf] 
+                        32 (fn [buf]
                           (let [new-val (insert (xy-to-buffer-position) " ")]
                             (inc-x)
                             new-val
@@ -162,7 +163,7 @@
                         186 (fn [buf] (insert-and-move ";"))
                         187 (fn [buf] (insert-and-move "="))
                         190 (fn [buf] (insert-and-move "."))
-                        8 (fn [buf]  
+                        8 (fn [buf]
                           (let [new-val (remove-at (- (xy-to-buffer-position) 1) )]
                             (move-x-backward)
                             new-val
@@ -171,8 +172,8 @@
                           )
                         ; enter
                         189 (fn [buf] (insert-and-move "-"))
-                        13 (fn 
-                          [buf] 
+                        13 (fn
+                          [buf]
                           (let [new-val (insert (xy-to-buffer-position) "\n")]
                            (inc-y)
                            (move-x-to 1)
@@ -180,7 +181,7 @@
                           ))
                         37 (fn [buf] (move-x-backward) buf)
                         39 (fn [buf] (move-x-forward) buf)
-                        9 (fn 
+                        9 (fn
                           [buf]
                             (insert-and-move (apply str (repeat tab-size " ")))
                           )
@@ -210,7 +211,7 @@
 
 
 (defn handle-input [keyCode e]
-  (do 
+  (do
     (.log js/console "xy-to-buffer-position" (xy-to-buffer-position))
     (set! buffer (insert (xy-to-buffer-position) (.fromCharCode js/String (+ 32 keyCode))))
     (inc-x)))
@@ -224,7 +225,7 @@
 (defn render-text [ctx]
   (let [lines (get-viewport-lines)
           text-width (.-width (.measureText ctx (last lines))) ]
-      (loop [y margin-y 
+      (loop [y margin-y
              rec-lines lines]
         (when (seq rec-lines)
           (.fillText ctx (first rec-lines) margin-x y)
@@ -242,7 +243,7 @@
   (.moveTo editor-ctx (- width minimap-width) 0)
   (.lineTo editor-ctx (- width minimap-width) height)
   (.stroke editor-ctx)
-  
+
 
   (let [new-canvas (.createElement js/document "canvas")
         new-ctx (.getContext new-canvas "2d")]
@@ -295,7 +296,7 @@
     (.preventDefault e)
     (.stopPropagation e)
      (when (= handler :handler-not-found)
-       (handle-input code e))    
+       (handle-input code e))
      (when (not (= handler :handler-not-found))
        (.log js/console "handling event")
        (set! buffer (handler buffer)))
