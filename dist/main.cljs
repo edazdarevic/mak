@@ -309,9 +309,6 @@
   (render)
 )
 
-(defn refresh []
-  (render))
-
 (defn move-viewport-down []
   (.log js/console "move down")
   (set! view-end  (min (num-of-all-lines) (+ view-end 5)))

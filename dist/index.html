@@ -1,8 +1,22 @@
 <html>
 <head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+
 </head>
 <body>
     <canvas id=editor width=1000 height=600></canvas>
     <script src='js/main.js'></script>
+    <script type="text/javascript">
+    function loadfile() {
+        $.get('main.cljs', function(data) {
+        //alert(data);
+        edin.main.buffer = data;
+        edin.main.refresh();
+        });
+    }
+    </script>
+    <br/>
+    <button onclick="loadfile()">Load file</button>
 </body>
 </html>
