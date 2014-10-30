@@ -11,6 +11,7 @@
 (def view-end max-lines)
 (def cx 1)
 (def cy 1)
+(def scrollspeed 5)
 
 (def width 1000)
 (def height 600)
@@ -302,7 +303,7 @@
 ;   (render))
 
 (defn move-viewport-up []
-  (set! view-start (max 1 (- view-start 5)))
+  (set! view-start (max 1 (- view-start scrollspeed)))
   (set! view-end (+ view-start max-lines -1))
   (set! cy view-start)
   (set! cx 1)
@@ -314,7 +315,7 @@
 
 (defn move-viewport-down []
   (.log js/console "move down")
-  (set! view-end  (min (num-of-all-lines) (+ view-end 5)))
+  (set! view-end  (min (num-of-all-lines) (+ view-end scrollspeed)))
   (set! view-start (max 1 (- view-end max-lines -1)))
   (set! cy view-start)
   (set! cx 1)
@@ -343,6 +344,3 @@
 
 (events/listen d (.-KEYDOWN events/EventType) on-input)
 (events/listen d "mousewheel" on-wheel)
-
-
-
