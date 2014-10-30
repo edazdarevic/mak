@@ -119,7 +119,6 @@
   (inc-y))
 
 (defn move-up []
-  (.log js/console "moving up")
   (when (>= (- cy 1) 1)
     (dec-y)
     (when (> cx (len-at-line cy))
@@ -222,9 +221,9 @@
         y (:y (get-cursor-drawing-pos)) ]
     (.fillRect editor-ctx x y caret-width caret-height)))
 
-(defn render-text [ctx]
-  (let [lines (get-viewport-lines)
-          text-width (.-width (.measureText ctx (last lines))) ]
+(defn render-text [ctx lns]
+  (let [lines lns
+    text-width (.-width (.measureText ctx (last lines)))]
       (loop [y margin-y
              rec-lines lines]
         (when (seq rec-lines)
@@ -253,7 +252,7 @@
       (.log js/console (str "Scale factor is:" sf))
       (.scale new-ctx sf sf)
       (set! (.-fillStyle new-ctx) "rgba(255, 255, 255, 1)");
-      (render-text new-ctx)
+      (render-text new-ctx (get-all-lines))
       (.drawImage editor-ctx new-canvas (- width minimap-width) 0)
 
       )))
@@ -281,13 +280,20 @@
 (render-editor-ui)
 
 
+
 (defn render []
   (do
     (.log js/console "Clearing!")
     (.clearRect editor-ctx 0 0 width height)
     (render-editor-ui)
     (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
-    (render-text editor-ctx)))
+    (render-text editor-ctx (get-viewport-lines))))
+
+(defn move-viewport-up []
+  (set! view-start (max 1 (- view-start 5)))
+  (set! view-end (+ view-start max-lines))
+  (set! cy view-start)
+  (render))
 
 (defn on-input [e]
   (let [code (.-keyCode e)
