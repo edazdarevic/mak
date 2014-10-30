@@ -40,6 +40,7 @@
         )
       )
     (when (> cy view-end)
+      (.log js/console "cy > view-end")
       (let [offset (- cy view-end)]
         (set! view-start (+ view-start offset))
         (set! view-end (+ view-end offset))
@@ -67,7 +68,7 @@
   (count (.split buffer "\n")))
 
 (defn num-of-viewport-lines []
-  (count (.split buffer "\n")))
+  (count (get-viewport-lines)))
 
 (defn len-at-line [n]
   (let [line (nth (.split buffer "\n") (- n 1))]
@@ -125,7 +126,8 @@
       (move-x-to (+ 1 (len-at-line cy))))))
 
 (defn move-down []
-  (when (< cy (num-of-all-lines))
+  (when (< cy (max (num-of-viewport-lines) (num-of-all-lines)))
+    (.log js/console "incrementing y")
     (inc-y)
     (when (> cx (len-at-line cy))
       (move-x-to (+ 1 (len-at-line cy))))))
@@ -265,6 +267,7 @@
   ; text color
   (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
   (.fillText editor-ctx (str "Line " (+ (- cy 0) 0) ", Column " cx) 10 (- height 20))
+  (.fillText editor-ctx (str "Lines: " (num-of-all-lines)) (- width minimap-width 100) (- height 20))
 
   ; line numbers
   (set! (.-fillStyle editor-ctx) "rgb(96, 96, 96)");
@@ -283,17 +286,37 @@
 
 (defn render []
   (do
+     (get-visible-range)
+
     (.log js/console "Clearing!")
     (.clearRect editor-ctx 0 0 width height)
     (render-editor-ui)
     (set! (.-fillStyle editor-ctx) "rgb(255, 255, 255)");
     (render-text editor-ctx (get-viewport-lines))))
 
+; (defn move-viewport [op amount]
+
+;   (set! view-start (op view-start amount))
+;   (set! view-end (+ view-start max-lines -1))
+;   (set! cy view-start)
+;   (render))
+
 (defn move-viewport-up []
   (set! view-start (max 1 (- view-start 5)))
-  (set! view-end (+ view-start max-lines))
+  (set! view-end (+ view-start max-lines -1))
   (set! cy view-start)
-  (render))
+  (set! cx 1)
+  (render)
+)
+
+(defn move-viewport-down []
+  (.log js/console "move down")
+  (set! view-end  (min (num-of-all-lines) (+ view-end 5)))
+  (set! view-start (max 1 (- view-end max-lines -1)))
+  (set! cy view-start)
+  (set! cx 1)
+  (render)
+  )
 
 (defn on-input [e]
   (let [code (.-keyCode e)
@@ -306,10 +329,17 @@
      (when (not (= handler :handler-not-found))
        (.log js/console "handling event")
        (set! buffer (handler buffer)))
-     (get-visible-range)
      (render)))
 
+(defn on-wheel [e]
+  ; (.log js/console )
+  (let [deltaY (.-deltaY (.-event_ e))]
+    (if (< deltaY 0)
+      (move-viewport-up)
+      (move-viewport-down))))
+
 (events/listen d (.-KEYDOWN events/EventType) on-input)
+(events/listen d "mousewheel" on-wheel)
 
 
 
