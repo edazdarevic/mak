@@ -165,12 +165,12 @@ var Ha = {}, Ia = function() {
     }
     return c.call(null, a, b);
   }
-  var c = null, c = function(c, e, f) {
+  var c = null, c = function(d, c, f) {
     switch(arguments.length) {
       case 2:
-        return b.call(this, c, e);
+        return b.call(this, d, c);
       case 3:
-        return a.call(this, c, e, f);
+        return a.call(this, d, c, f);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
@@ -8394,17 +8394,35 @@ function kh(a) {
     return zc(a);
   }, a);
 }
-function lh(a) {
-  var b = kh(["edin", "dazdarevic"]);
-  a = Zd.a(1, Xc.c(function() {
-    return function(a, b) {
-      return Cd.a(a, new U(null, 1, 5, V, [wc(a) - b], null));
-    };
-  }(b), new U(null, 1, 5, V, [a], null), b));
-  var c = jh(a), c = H(c), b = Bc.a(a, c) + Bc.a(b, c);
-  return new r(null, 2, [Rg, c, Tg, b - 1 * c], null);
-}
-;var mh = !0;
+var lh = function() {
+  function a(a, b, c) {
+    a = kh(a);
+    b = Zd.a(1, Xc.c(function() {
+      return function(a, b) {
+        return Cd.a(a, new U(null, 1, 5, V, [wc(a) - b], null));
+      };
+    }(a), new U(null, 1, 5, V, [b], null), a));
+    var g = jh(b), g = H(g);
+    a = Bc.a(b, g) + Bc.a(a, g);
+    return 0 < c ? null : new r(null, 2, [Rg, g, Tg, a - 1 * g], null);
+  }
+  function b(a, b) {
+    return c.c(a, b, -1);
+  }
+  var c = null, c = function(c, e, f) {
+    switch(arguments.length) {
+      case 2:
+        return b.call(this, c, e);
+      case 3:
+        return a.call(this, c, e, f);
+    }
+    throw Error("Invalid arity: " + arguments.length);
+  };
+  c.a = b;
+  c.c = a;
+  return c;
+}();
+var mh = !0;
 function nh(a) {
   a = Hf.d(L([Dc.c(Hf.d(L([new r(null, 4, [eh, 0, bh, 0, Qg, 0, $g, 0], null), t(null) ? new r(null, 1, [Ag, null], null) : null], 0)), ah, J), a], 0));
   return Rd.b ? Rd.b(a) : Rd.call(null, a);
@@ -9567,7 +9585,7 @@ function hi() {
 hi = O(hi, Hf.d(L([new r(null, 5, [Jg, 26, Xg, 57, Lg, 10, Rg, 57, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new r(null, 2, [Gg, O(new B("edin.core-test", "cursor-position", "edin.core-test/cursor-position", 1811090759, null), new r(null, 5, [Jg, 26, Xg, 57, Lg, 10, Rg, 57, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), eh, function(a) {
   var b = yg.b(Hc(Yg.b(a)));
   try {
-    var c = lh(7), d = yg.b(Hc(Yg.b(a)));
+    var c = lh.a(["edin", "dazdarevic"], 7), d = yg.b(Hc(Yg.b(a)));
     try {
       try {
         var e = z(z(J, 1), Rg.b(c)), f = Q.a(A, e);
@@ -9636,7 +9654,7 @@ function ii() {
 ii = O(ii, Hf.d(L([new r(null, 5, [Jg, 28, Xg, 64, Lg, 10, Rg, 64, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new r(null, 2, [Gg, O(new B("edin.core-test", "cursor-position-2", "edin.core-test/cursor-position-2", -375088920, null), new r(null, 5, [Jg, 28, Xg, 64, Lg, 10, Rg, 64, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), eh, function(a) {
   var b = yg.b(Hc(Yg.b(a)));
   try {
-    var c = lh(9), d = yg.b(Hc(Yg.b(a)));
+    var c = lh.a(["edin", "dazdarevic"], 9), d = yg.b(Hc(Yg.b(a)));
     try {
       try {
         var e = z(z(J, 1), Rg.b(c)), f = Q.a(A, e);
@@ -9705,7 +9723,7 @@ ii = function() {
 ii = O(ii, Hf.d(L([new r(null, 5, [Jg, 28, Xg, 71, Lg, 10, Rg, 71, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new r(null, 2, [Gg, O(new B("edin.core-test", "cursor-position-2", "edin.core-test/cursor-position-2", -375088920, null), new r(null, 5, [Jg, 28, Xg, 71, Lg, 10, Rg, 71, Ig, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), eh, function(a) {
   var b = yg.b(Hc(Yg.b(a)));
   try {
-    var c = lh(3), d = yg.b(Hc(Yg.b(a)));
+    var c = lh.a(["edin", "dazdarevic"], 3), d = yg.b(Hc(Yg.b(a)));
     try {
       try {
         var e = z(z(J, 0), Rg.b(c)), f = Q.a(A, e);

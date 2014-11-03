@@ -73,6 +73,7 @@
    position (buffer/buffer-position-to-cursor (buffer/to-lines b) 3)]
    (is ( = (:line position) 0))
    (is ( = (:col position) 3))
+
    ))
 
 

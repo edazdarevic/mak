@@ -41,8 +41,20 @@
     #(count %)
     lines))
 
+(defn is-wrapped?
+  [num]
+  (pos? num))
+
+(defn word-wrap
+  [buff size]
+  (partition-all size buff))
+
+
+
+
 (defn buffer-position-to-cursor
-  [all-lines position]
+  ([all-lines position] (buffer-position-to-cursor all-lines position -1))
+  ([all-lines position wrapped]
   (let [
     sizes (len-of-each-line all-lines)
 
@@ -57,7 +69,12 @@
           line-index (first inds)
           col (+ (nth lines line-index) (nth sizes line-index))
           ]
-      { :line line-index
+
+          (if (is-wrapped? wrapped)
+            nil ; if
+            { :line line-index
         :col (- col (* line-index 1))
-        } )))
+        } ; else
+            )
+       ))))
 
