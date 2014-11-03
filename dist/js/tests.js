@@ -8395,16 +8395,14 @@ function kh(a) {
   }, a);
 }
 function lh(a) {
-  var b = ["edin", "dazdarevic"], c = kh(b);
+  var b = kh(["edin", "dazdarevic"]);
   a = Zd.a(1, Xc.c(function() {
     return function(a, b) {
       return Cd.a(a, new U(null, 1, 5, V, [wc(a) - b], null));
     };
-  }(b, c), new U(null, 1, 5, V, [a], null), c));
-  b = jh(a);
-  b = H(b);
-  c = Bc.a(a, b) + Bc.a(c, b);
-  return new r(null, 2, [Rg, b, Tg, c - 1 * b], null);
+  }(b), new U(null, 1, 5, V, [a], null), b));
+  var c = jh(a), c = H(c), b = Bc.a(a, c) + Bc.a(b, c);
+  return new r(null, 2, [Rg, c, Tg, b - 1 * c], null);
 }
 ;var mh = !0;
 function nh(a) {

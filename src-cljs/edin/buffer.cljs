@@ -42,9 +42,8 @@
     lines))
 
 (defn buffer-position-to-cursor
-  [buff position]
+  [all-lines position]
   (let [
-    all-lines (to-lines buff)
     sizes (len-of-each-line all-lines)
 
     lines (drop 1 (reduce

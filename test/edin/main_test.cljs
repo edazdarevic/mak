@@ -56,21 +56,21 @@
 
 (deftest cursor-position
   (let [b (buffer/create-buffer "edin\ndazdarevic")
-   position (buffer/buffer-position-to-cursor b 7)]
+   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 7)]
    (is ( = (:line position) 1))
    (is ( = (:col position) 2))
    ))
 
 (deftest cursor-position-2
   (let [b (buffer/create-buffer "edin\ndazdarevic")
-   position (buffer/buffer-position-to-cursor b 9)]
+   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 9)]
    (is ( = (:line position) 1))
    (is ( = (:col position) 4))
    ))
 
 (deftest cursor-position-2
   (let [b (buffer/create-buffer "edin\ndazdarevic")
-   position (buffer/buffer-position-to-cursor b 3)]
+   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 3)]
    (is ( = (:line position) 0))
    (is ( = (:col position) 3))
    ))
