@@ -74,7 +74,7 @@
           (if (and (is-wrapped? wrapped) (>= final-col wrapped))
             ; if
             (
-                buffer-position-to-cursor (word-wrap (nth all-lines line-index) wrapped) col ;; current line
+                buffer-position-to-cursor (word-wrap (nth all-lines line-index) wrapped) final-col ;; current line
               )
 
             { :line line-index

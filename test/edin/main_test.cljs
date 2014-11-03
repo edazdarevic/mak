@@ -68,7 +68,7 @@
    (is ( = (:col position) 4))
    ))
 
-(deftest cursor-position-2
+(deftest cursor-position-3
   (let [b (buffer/create-buffer "edin\ndazdarevic")
    position (buffer/buffer-position-to-cursor (buffer/to-lines b) 3)]
    (is ( = (:line position) 0))
@@ -76,6 +76,24 @@
 
    ))
 
+(deftest cursor-position-4
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 4 3)]
+   (is ( = (:line position) 1))
+   (is ( = (:col position) 0))
+
+   ))
+
+; edi
+; nda
+; zda
+(deftest cursor-position-5
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 7 3)]
+   (is ( = (:line position) 2))
+   (is ( = (:col position) 1))
+
+   ))
 
 (deftest word-wrap-test
   (let [b (buffer/create-buffer "edindazdarevic")
