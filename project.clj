@@ -7,15 +7,29 @@
   :main ^:skip-aot edin.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}}
-  :plugins [[lein-cljsbuild "1.0.3"]]
-  :cljsbuild { 
+  :plugins [[lein-cljsbuild "1.0.3"] [com.cemerick/clojurescript.test "0.3.1"]]
+  :cljsbuild {
                :builds [{
                          :source-paths ["src-cljs"]
                          :compiler {
                                     :output-to "dist/js/main.js"
-                                    :optimizations :whitespace
+                                    :optimizations :advanced
                                     :pretty-print true
                                     }
-                         }]
-               } 
+                         }
+                         {
+                          :source-paths ["test"]
+                          :compiler {
+                            :output-to "dist/js/tests.js"
+                            :optimizations :advanced
+                            :pretty-print true
+                          }
+
+                          }]
+                :test-commands {"unit-tests" ["node" :node-runner
+                                          "this.literal_js_was_evaluated=true"
+                                          "dist/js/tests.js"]}
+
+               }
+
   )

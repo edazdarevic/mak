@@ -1,11 +1,14 @@
 (ns edin.main
   (:require [goog.dom :as dom]
-            [goog.events :as events]))
+            [goog.events :as events]
+            [edin.drawing :as drawing]))
+
 
 (def NAME "edin text editor")
 (def editor-canvas (dom/getElement "editor"))
 (def editor-ctx (.getContext editor-canvas "2d"))
 
+(drawing/drawText editor-ctx 10 10 "Hello")
 (def max-lines 28)
 (def view-start 1)
 (def view-end max-lines)
@@ -278,6 +281,8 @@
   ;(highlight-trailing-space)
 
   (render-minimap)
+  (drawing/drawText editor-ctx 10 10 [123 " hamo" "great" ". This is a new sentence!"])
+
   )
 
 
