@@ -47,7 +47,7 @@
 
 (defn word-wrap
   [buff size]
-  (partition-all size buff))
+  (map (fn[item] (reduce #(str %1 %2) item)) (partition-all size buff)))
 
 
 
@@ -68,12 +68,17 @@
 
           line-index (first inds)
           col (+ (nth lines line-index) (nth sizes line-index))
+          final-col (- col (* line-index 1))
           ]
 
-          (if (is-wrapped? wrapped)
-            nil ; if
+          (if (and (is-wrapped? wrapped) (>= final-col wrapped))
+            ; if
+            (
+                buffer-position-to-cursor (word-wrap (nth all-lines line-index) wrapped) col ;; current line
+              )
+
             { :line line-index
-        :col (- col (* line-index 1))
+        :col final-col
         } ; else
             )
        ))))

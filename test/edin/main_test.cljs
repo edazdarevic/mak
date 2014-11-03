@@ -77,6 +77,16 @@
    ))
 
 
+(deftest word-wrap-test
+  (let [b (buffer/create-buffer "edindazdarevic")
+    wrapped (buffer/word-wrap b 4)]
+    (is (= 4 (count wrapped)))
+    (is (= "edin" (nth wrapped 0)))
+    (is (= "dazd" (nth wrapped 1)))
+    (is (= "arev" (nth wrapped 2)))
+    (is (= "ic" (nth wrapped 3)))))
+
+
 
 
 
