@@ -43,7 +43,7 @@ function ba(a) {
   return b;
 }
 var ca = "closure_uid_" + (1E9 * Math.random() >>> 0), da = 0;
-function fa(a, b) {
+function ea(a, b) {
   var c = a.split("."), d = aa;
   c[0] in d || !d.execScript || d.execScript("var " + c[0]);
   for (var e;c.length && (e = c.shift());) {
@@ -1673,21 +1673,21 @@ function Lc(a, b) {
 }
 l = Lc.prototype;
 l.call = function() {
-  function a(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea, R) {
+  function a(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa, R) {
     a = this.f;
-    return H.Wa ? H.Wa(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea, R) : H.call(null, a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea, R);
+    return H.Wa ? H.Wa(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa, R) : H.call(null, a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa, R);
   }
-  function b(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea) {
+  function b(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa) {
     a = this;
-    return a.f.aa ? a.f.aa(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X, ea);
+    return a.f.aa ? a.f.aa(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X, fa);
   }
-  function c(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X) {
+  function c(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X) {
     a = this;
-    return a.f.$ ? a.f.$(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P, X);
+    return a.f.$ ? a.f.$(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q, X);
   }
-  function d(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P) {
+  function d(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q) {
     a = this;
-    return a.f.Z ? a.f.Z(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, P);
+    return a.f.Z ? a.f.Z(b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q) : a.f.call(null, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J, Q);
   }
   function e(a, b, c, d, e, f, g, h, k, n, p, q, v, r, x, D, U, J) {
     a = this;
@@ -1741,7 +1741,7 @@ l.call = function() {
     a = this;
     return a.f.r ? a.f.r(b, c, d, e, f) : a.f.call(null, b, c, d, e, f);
   }
-  function P(a, b, c, d, e) {
+  function Q(a, b, c, d, e) {
     a = this;
     return a.f.k ? a.f.k(b, c, d, e) : a.f.call(null, b, c, d, e);
   }
@@ -1749,7 +1749,7 @@ l.call = function() {
     a = this;
     return a.f.c ? a.f.c(b, c, d) : a.f.call(null, b, c, d);
   }
-  function ea(a, b, c) {
+  function fa(a, b, c) {
     a = this;
     return a.f.a ? a.f.a(b, c) : a.f.call(null, b, c);
   }
@@ -1761,18 +1761,18 @@ l.call = function() {
     a = this;
     return a.f.o ? a.f.o() : a.f.call(null);
   }
-  var U = null, U = function(U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Ae, Xb) {
+  var U = null, U = function(U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Be, Xb) {
     switch(arguments.length) {
       case 1:
         return R.call(this, U);
       case 2:
         return qa.call(this, U, sa);
       case 3:
-        return ea.call(this, U, sa, ua);
+        return fa.call(this, U, sa, ua);
       case 4:
         return X.call(this, U, sa, ua, wa);
       case 5:
-        return P.call(this, U, sa, ua, wa, Aa);
+        return Q.call(this, U, sa, ua, wa, Aa);
       case 6:
         return J.call(this, U, sa, ua, wa, Aa, Ba);
       case 7:
@@ -1804,17 +1804,17 @@ l.call = function() {
       case 20:
         return c.call(this, U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc);
       case 21:
-        return b.call(this, U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Ae);
+        return b.call(this, U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Be);
       case 22:
-        return a.call(this, U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Ae, Xb);
+        return a.call(this, U, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Be, Xb);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
   U.b = R;
   U.a = qa;
-  U.c = ea;
+  U.c = fa;
   U.k = X;
-  U.r = P;
+  U.r = Q;
   U.C = J;
   U.N = D;
   U.ba = x;
@@ -1891,18 +1891,18 @@ l.X = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) {
 l.Y = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) {
   return this.f.Y ? this.f.Y(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J);
 };
-l.Z = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) {
-  return this.f.Z ? this.f.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P);
+l.Z = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) {
+  return this.f.Z ? this.f.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q);
 };
-l.$ = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) {
-  return this.f.$ ? this.f.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X);
+l.$ = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) {
+  return this.f.$ ? this.f.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X);
 };
-l.aa = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) {
-  return this.f.aa ? this.f.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea);
+l.aa = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) {
+  return this.f.aa ? this.f.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) : this.f.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa);
 };
-l.zb = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa) {
+l.zb = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa) {
   var R = this.f;
-  return H.Wa ? H.Wa(R, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa) : H.call(null, R, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa);
+  return H.Wa ? H.Wa(R, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa) : H.call(null, R, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa);
 };
 l.Mb = !0;
 l.I = function(a, b) {
@@ -3061,35 +3061,35 @@ function Md(a, b, c) {
   if (13 === b) {
     return a.U ? a.U(c, d, e, f, g, h, k, n, p, q, r, v, x) : a.U ? a.U(c, d, e, f, g, h, k, n, p, q, r, v, x) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x);
   }
-  var D = Na(J), P = Oa(J);
+  var D = Na(J), Q = Oa(J);
   if (14 === b) {
     return a.V ? a.V(c, d, e, f, g, h, k, n, p, q, r, v, x, D) : a.V ? a.V(c, d, e, f, g, h, k, n, p, q, r, v, x, D) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D);
   }
-  var J = Na(P), X = Oa(P);
+  var J = Na(Q), X = Oa(Q);
   if (15 === b) {
     return a.W ? a.W(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : a.W ? a.W(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J);
   }
-  var P = Na(X), ea = Oa(X);
+  var Q = Na(X), fa = Oa(X);
   if (16 === b) {
-    return a.X ? a.X(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : a.X ? a.X(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P);
+    return a.X ? a.X(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : a.X ? a.X(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q);
   }
-  var X = Na(ea), qa = Oa(ea);
+  var X = Na(fa), qa = Oa(fa);
   if (17 === b) {
-    return a.Y ? a.Y(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : a.Y ? a.Y(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X);
+    return a.Y ? a.Y(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : a.Y ? a.Y(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X);
   }
-  var ea = Na(qa), R = Oa(qa);
+  var fa = Na(qa), R = Oa(qa);
   if (18 === b) {
-    return a.Z ? a.Z(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) : a.Z ? a.Z(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea);
+    return a.Z ? a.Z(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) : a.Z ? a.Z(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa);
   }
   qa = Na(R);
   R = Oa(R);
   if (19 === b) {
-    return a.$ ? a.$(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa) : a.$ ? a.$(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa);
+    return a.$ ? a.$(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa) : a.$ ? a.$(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa);
   }
   var U = Na(R);
   Oa(R);
   if (20 === b) {
-    return a.aa ? a.aa(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa, U) : a.aa ? a.aa(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa, U) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa, U);
+    return a.aa ? a.aa(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa, U) : a.aa ? a.aa(c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa, U) : a.call(null, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa, U);
   }
   throw Error("Only up to 20 arguments supported on functions");
 }
@@ -4573,7 +4573,7 @@ var ye = function xe(b, c, d, e, f) {
     g.e[h] = b;
   }
   return g;
-}, Be = function ze(b, c, d) {
+}, Ae = function ze(b, c, d) {
   var e = b.i - 2 >>> c & 31;
   if (5 < c) {
     b = ze(b, c - 5, d.e[e]);
@@ -4672,7 +4672,7 @@ l.Ia = function() {
   if (1 < this.i - qe(this)) {
     return new De(this.n, this.i - 1, this.shift, this.root, this.ga.slice(0, -1), null);
   }
-  var a = ve(this, this.i - 2), b = Be(this, this.shift, this.root), b = null == b ? Ee : b, c = this.i - 1;
+  var a = ve(this, this.i - 2), b = Ae(this, this.shift, this.root), b = null == b ? Ee : b, c = this.i - 1;
   return 5 < this.shift && null == b.e[1] ? new De(this.n, c, this.shift - 5, b.e[0], a, null) : new De(this.n, c, this.shift, b, a, null);
 };
 l.$a = function() {
@@ -8263,47 +8263,47 @@ function Lg(a, b) {
   }().call(null, a.bc);
 }
 l.call = function() {
-  function a(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea, qa) {
+  function a(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa, qa) {
     a = this;
-    var Xb = H.d(a.g, b, c, d, e, C([f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea, qa], 0)), hh = Lg(this, Xb);
-    s(hh) || Hg(a.name, Xb);
-    return H.d(hh, b, c, d, e, C([f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea, qa], 0));
+    var Xb = H.d(a.g, b, c, d, e, C([f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa, qa], 0)), ih = Lg(this, Xb);
+    s(ih) || Hg(a.name, Xb);
+    return H.d(ih, b, c, d, e, C([f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa, qa], 0));
   }
-  function b(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea) {
+  function b(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa) {
     a = this;
-    var qa = a.g.aa ? a.g.aa(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea), Xb = Lg(this, qa);
+    var qa = a.g.aa ? a.g.aa(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa), Xb = Lg(this, qa);
     s(Xb) || Hg(a.name, qa);
-    return Xb.aa ? Xb.aa(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea) : Xb.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R, ea);
+    return Xb.aa ? Xb.aa(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa) : Xb.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R, fa);
   }
-  function c(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R) {
+  function c(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R) {
     a = this;
-    var ea = a.g.$ ? a.g.$(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R), qa = Lg(this, ea);
-    s(qa) || Hg(a.name, ea);
-    return qa.$ ? qa.$(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R) : qa.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, R);
+    var fa = a.g.$ ? a.g.$(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R), qa = Lg(this, fa);
+    s(qa) || Hg(a.name, fa);
+    return qa.$ ? qa.$(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R) : qa.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, R);
   }
-  function d(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) {
+  function d(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) {
     a = this;
-    var R = a.g.Z ? a.g.Z(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X), ea = Lg(this, R);
-    s(ea) || Hg(a.name, R);
-    return ea.Z ? ea.Z(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : ea.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X);
+    var R = a.g.Z ? a.g.Z(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X), fa = Lg(this, R);
+    s(fa) || Hg(a.name, R);
+    return fa.Z ? fa.Z(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : fa.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X);
   }
-  function e(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) {
+  function e(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) {
     a = this;
-    var X = a.g.Y ? a.g.Y(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P), R = Lg(this, X);
+    var X = a.g.Y ? a.g.Y(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q), R = Lg(this, X);
     s(R) || Hg(a.name, X);
-    return R.Y ? R.Y(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : R.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P);
+    return R.Y ? R.Y(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : R.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q);
   }
   function f(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) {
     a = this;
-    var P = a.g.X ? a.g.X(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J), X = Lg(this, P);
-    s(X) || Hg(a.name, P);
+    var Q = a.g.X ? a.g.X(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J), X = Lg(this, Q);
+    s(X) || Hg(a.name, Q);
     return X.X ? X.X(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : X.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J);
   }
   function g(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) {
     a = this;
-    var J = a.g.W ? a.g.W(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D), P = Lg(this, J);
-    s(P) || Hg(a.name, J);
-    return P.W ? P.W(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : P.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D);
+    var J = a.g.W ? a.g.W(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : a.g.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D), Q = Lg(this, J);
+    s(Q) || Hg(a.name, J);
+    return Q.W ? Q.W(b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : Q.call(null, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D);
   }
   function h(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x) {
     a = this;
@@ -8365,7 +8365,7 @@ l.call = function() {
     s(h) || Hg(a.name, g);
     return h.r ? h.r(b, c, d, e, f) : h.call(null, b, c, d, e, f);
   }
-  function P(a, b, c, d, e) {
+  function Q(a, b, c, d, e) {
     a = this;
     var f = a.g.k ? a.g.k(b, c, d, e) : a.g.call(null, b, c, d, e), g = Lg(this, f);
     s(g) || Hg(a.name, f);
@@ -8377,7 +8377,7 @@ l.call = function() {
     s(f) || Hg(a.name, e);
     return f.c ? f.c(b, c, d) : f.call(null, b, c, d);
   }
-  function ea(a, b, c) {
+  function fa(a, b, c) {
     a = this;
     var d = a.g.a ? a.g.a(b, c) : a.g.call(null, b, c), e = Lg(this, d);
     s(e) || Hg(a.name, d);
@@ -8389,16 +8389,16 @@ l.call = function() {
     s(d) || Hg(a.name, c);
     return d.b ? d.b(b) : d.call(null, b);
   }
-  var R = null, R = function(U, R, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Ae) {
+  var R = null, R = function(U, R, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Be) {
     switch(arguments.length) {
       case 2:
         return qa.call(this, U, R);
       case 3:
-        return ea.call(this, U, R, sa);
+        return fa.call(this, U, R, sa);
       case 4:
         return X.call(this, U, R, sa, ua);
       case 5:
-        return P.call(this, U, R, sa, ua, wa);
+        return Q.call(this, U, R, sa, ua, wa);
       case 6:
         return J.call(this, U, R, sa, ua, wa, Aa);
       case 7:
@@ -8432,14 +8432,14 @@ l.call = function() {
       case 21:
         return b.call(this, U, R, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc);
       case 22:
-        return a.call(this, U, R, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Ae);
+        return a.call(this, U, R, sa, ua, wa, Aa, Ba, Ia, Ka, Ma, Pa, Ya, cb, fb, gb, nb, wb, Eb, Ob, ic, Nc, Be);
     }
     throw Error("Invalid arity: " + arguments.length);
   };
   R.a = qa;
-  R.c = ea;
+  R.c = fa;
   R.k = X;
-  R.r = P;
+  R.r = Q;
   R.C = J;
   R.N = D;
   R.ba = x;
@@ -8538,40 +8538,40 @@ l.W = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x) {
   return J.W ? J.W(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x) : J.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x);
 };
 l.X = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) {
-  var J = this.g.X ? this.g.X(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D), P = Lg(this, J);
-  s(P) || Hg(this.name, J);
-  return P.X ? P.X(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : P.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D);
+  var J = this.g.X ? this.g.X(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D), Q = Lg(this, J);
+  s(Q) || Hg(this.name, J);
+  return Q.X ? Q.X(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D) : Q.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D);
 };
 l.Y = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) {
-  var P = this.g.Y ? this.g.Y(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J), X = Lg(this, P);
-  s(X) || Hg(this.name, P);
+  var Q = this.g.Y ? this.g.Y(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J), X = Lg(this, Q);
+  s(X) || Hg(this.name, Q);
   return X.Y ? X.Y(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J) : X.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J);
 };
-l.Z = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) {
-  var X = this.g.Z ? this.g.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P), ea = Lg(this, X);
-  s(ea) || Hg(this.name, X);
-  return ea.Z ? ea.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P) : ea.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P);
+l.Z = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) {
+  var X = this.g.Z ? this.g.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q), fa = Lg(this, X);
+  s(fa) || Hg(this.name, X);
+  return fa.Z ? fa.Z(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q) : fa.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q);
 };
-l.$ = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) {
-  var ea = this.g.$ ? this.g.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X), qa = Lg(this, ea);
-  s(qa) || Hg(this.name, ea);
-  return qa.$ ? qa.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X) : qa.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X);
+l.$ = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) {
+  var fa = this.g.$ ? this.g.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X), qa = Lg(this, fa);
+  s(qa) || Hg(this.name, fa);
+  return qa.$ ? qa.$(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X) : qa.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X);
 };
-l.aa = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) {
-  var qa = this.g.aa ? this.g.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea), R = Lg(this, qa);
+l.aa = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) {
+  var qa = this.g.aa ? this.g.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) : this.g.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa), R = Lg(this, qa);
   s(R) || Hg(this.name, qa);
-  return R.aa ? R.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea) : R.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea);
+  return R.aa ? R.aa(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa) : R.call(null, a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa);
 };
-l.zb = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa) {
-  var R = H.d(this.g, a, b, c, d, C([e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa], 0)), U = Lg(this, R);
+l.zb = function(a, b, c, d, e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa) {
+  var R = H.d(this.g, a, b, c, d, C([e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa], 0)), U = Lg(this, R);
   s(U) || Hg(this.name, R);
-  return H.d(U, a, b, c, d, C([e, f, g, h, k, n, p, q, r, v, x, D, J, P, X, ea, qa], 0));
+  return H.d(U, a, b, c, d, C([e, f, g, h, k, n, p, q, r, v, x, D, J, Q, X, fa, qa], 0));
 };
 var Mg = new rd(null, "test-env", "test-env", -540228992), L = new rd(null, "async", "async", 1050769601), Ng = new rd(null, "each", "each", 940016129), Og = new rd("cemerick.cljs.test", "test-print-fn", "cemerick.cljs.test/test-print-fn", -2097998143), Pg = new rd(null, "namespaces", "namespaces", -1444157469), Qg = new rd(null, "begin-test-var", "begin-test-var", -908571100), na = new rd(null, "meta", "meta", 1499536964), oa = new rd(null, "dup", "dup", 556298533), Wd = new rd(null, "validator", 
 "validator", -1966190681), Rg = new rd(null, "default", "default", -1987822328), Sg = new rd(null, "ns", "ns", 441598760), Tg = new rd(null, "name", "name", 1843675177), Ug = new rd("cemerick.cljs.test", "running", "cemerick.cljs.test/running", -1954037558), M = new rd(null, "file", "file", -1269645878), Vg = new rd(null, "end-column", "end-column", 1425389514), Wg = new rd("cemerick.cljs.test", "foo", "cemerick.cljs.test/foo", -1669146357), N = new rd(null, "type", "type", 1174270348), la = new rd(null, 
 "flush-on-newline", "flush-on-newline", -151457939), xg = new rd(null, "descendants", "descendants", 1824886031), Xg = new rd(null, "column", "column", 2078222095), yg = new rd(null, "ancestors", "ancestors", -776045424), Yg = new rd("cemerick.cljs.test", "remaining", "cemerick.cljs.test/remaining", -1491651312), ma = new rd(null, "readably", "readably", 1129599760), Zg = new rd(null, "summary", "summary", 380847952), $g = new rd(null, "end-test-var", "end-test-var", 984198545), ah = new rd(null, 
-"stop", "stop", -2140911342), bh = new rd(null, "fail", "fail", 1706214930), O = new rd(null, "line", "line", 212345235), ch = new rd(null, "var", "var", -769682797), pa = new rd(null, "print-length", "print-length", 1931866356), dh = new rd(null, "col", "col", -1959363084), eh = new rd(null, "once", "once", -262568523), wg = new rd(null, "parents", "parents", -2027538891), Q = new rd(null, "expected", "expected", 1583670997), fh = new rd(null, "multiple-async-done", "multiple-async-done", 910410709), 
-gh = new rd("cemerick.cljs.test", "test-functions", "cemerick.cljs.test/test-functions", -1547551786), ih = new rd(null, "end-line", "end-line", 1837326455), S = new rd(null, "test-name", "test-name", -675595913), jh = new rd(null, "begin-test-ns", "begin-test-ns", -1701237033), kh = new rd(null, "error", "error", -978969032), lh = new rd("cemerick.cljs.test", "test-contexts", "cemerick.cljs.test/test-contexts", 1505935128), mh = new rd(null, "pass", "pass", 1574159993), nh = new rd(null, "hierarchy", 
+"stop", "stop", -2140911342), bh = new rd(null, "fail", "fail", 1706214930), O = new rd(null, "line", "line", 212345235), ch = new rd(null, "var", "var", -769682797), pa = new rd(null, "print-length", "print-length", 1931866356), dh = new rd(null, "col", "col", -1959363084), eh = new rd(null, "once", "once", -262568523), wg = new rd(null, "parents", "parents", -2027538891), P = new rd(null, "expected", "expected", 1583670997), fh = new rd(null, "multiple-async-done", "multiple-async-done", 910410709), 
+gh = new rd("cemerick.cljs.test", "test-functions", "cemerick.cljs.test/test-functions", -1547551786), hh = new rd(null, "end-line", "end-line", 1837326455), S = new rd(null, "test-name", "test-name", -675595913), jh = new rd(null, "begin-test-ns", "begin-test-ns", -1701237033), kh = new rd(null, "error", "error", -978969032), lh = new rd("cemerick.cljs.test", "test-contexts", "cemerick.cljs.test/test-contexts", 1505935128), mh = new rd(null, "pass", "pass", 1574159993), nh = new rd(null, "hierarchy", 
 "hierarchy", -1053470341), T = new rd(null, "actual", "actual", 107306363), oh = new rd(null, "end-test-ns", "end-test-ns", 1620675645), ph = new rd(null, "test", "test", 577538877), V = new rd(null, "message", "message", -406056002), qh = new rd("cljs.core", "not-found", "cljs.core/not-found", -1572889185);
 function rh(a, b, c) {
   return "" + za.b(id.c(a, 0, b)) + za.b(c) + za.b(id.a(a, b));
@@ -8654,10 +8654,10 @@ function Dh(a, b) {
   var c = 100 < b ? 100 : b;
   return a > c ? a : c;
 }
-function Eh() {
-  return 7 - Dc($f.a(function(a) {
+function Eh(a, b) {
+  return b - Dc($f.a(function(a) {
     return Nd.a(a, "\n");
-  }, pd(ce.a(8, "edin\ndazdarevic"))));
+  }, pd(ce.a(b + 1, a))));
 }
 function Fh(a) {
   var b = yh(["edin", "dazdarevic"]);
@@ -8783,13 +8783,13 @@ function Rh(a, b) {
   });
   return a;
 }
-fa("cemerick.cljs.test.on_async_progress", Rh);
+ea("cemerick.cljs.test.on_async_progress", Rh);
 function Sh(a, b) {
   return Rh(a, function(a) {
     return s(Qh(a)) ? b.b ? b.b(a) : b.call(null, a) : null;
   });
 }
-fa("cemerick.cljs.test.on_testing_complete", Sh);
+ea("cemerick.cljs.test.on_testing_complete", Sh);
 function Th(a) {
   var b = Xc(a) ? H.a(Vd, a) : a, c = Gc.a(b, S), d = Gc.a(b, Mg);
   a = Gc.a(b, O);
@@ -8880,7 +8880,7 @@ Jg(bh, function(a) {
     y(lh.b(E.b ? E.b(b) : E.call(null, b))) && ng.d(C([Uh(b)], 0));
     var e = V.b(a);
     s(e) && ng.d(C([e], 0));
-    ng.d(C(["expected:", Zd.d(C([Q.b(a)], 0))], 0));
+    ng.d(C(["expected:", Zd.d(C([P.b(a)], 0))], 0));
     return ng.d(C(["  actual:", Zd.d(C([T.b(a)], 0))], 0));
   } finally {
     ia = c;
@@ -8897,7 +8897,7 @@ Jg(kh, function(a) {
     y(lh.b(E.b ? E.b(b) : E.call(null, b))) && ng.d(C([Uh(b)], 0));
     var e = V.b(a);
     s(e) && ng.d(C([e], 0));
-    ng.d(C(["expected:", Zd.d(C([Q.b(a)], 0))], 0));
+    ng.d(C(["expected:", Zd.d(C([P.b(a)], 0))], 0));
     mg.d(C(["  actual: "], 0));
     var f = T.b(a);
     return f instanceof Error ? ng.d(C([f.stack], 0)) : og.d(C([f], 0));
@@ -9047,7 +9047,7 @@ var Z = function() {
     if (!(f instanceof Nh)) {
       throw Error("Assert failed: " + za.b(Zd.d(C([K(new w(null, "instance?", "instance?", 1075939923, null), new w(null, "TestContext", "TestContext", -1631381989, null), new w(null, "test-ctx", "test-ctx", -185362578, null))], 0))));
     }
-    Y.b(Y.b(Sf.d(C([new m(null, 4, [N, kh, V, "Uncaught exception, not in assertion.", Q, null, T, b], null), f], 0))));
+    Y.b(Y.b(Sf.d(C([new m(null, 4, [N, kh, V, "Uncaught exception, not in assertion.", P, null, T, b], null), f], 0))));
     return c.b(f);
   }
   function b(a) {
@@ -9100,7 +9100,7 @@ var Z = function() {
               n.b ? n.b(r) : n.call(null, r);
             } catch (v) {
               if (v instanceof Error) {
-                Y.b(new m(null, 6, [N, kh, V, "Uncaught exception, not in assertion.", Mg, a, S, p, Q, null, T, v], null));
+                Y.b(new m(null, 6, [N, kh, V, "Uncaught exception, not in assertion.", Mg, a, S, p, P, null, T, v], null));
               } else {
                 throw v;
               }
@@ -9283,8 +9283,8 @@ var mi = function() {
   a.d = b;
   return a;
 }();
-fa("cemerick.cljs.test.run_tests_STAR_", mi);
-fa("cemerick.cljs.test.run_all_tests", function() {
+ea("cemerick.cljs.test.run_tests_STAR_", mi);
+ea("cemerick.cljs.test.run_all_tests", function() {
   function a(a) {
     return H.a(mi, je.a(function(b) {
       b = ud(b);
@@ -9313,18 +9313,18 @@ fa("cemerick.cljs.test.run_all_tests", function() {
   c.b = a;
   return c;
 }());
-fa("cemerick.cljs.test.successful_QMARK_", function ni(b) {
+ea("cemerick.cljs.test.successful_QMARK_", function ni(b) {
   var c = Oh(b), d = Xc(c) ? H.a(Vd, c) : c, c = Gc.a(d, L), e = Gc.a(d, kh), d = Gc.a(d, bh);
   b = Qh(b);
   return s(b) && (b = 0 === (s(d) ? d : 0)) ? (e = 0 === (s(e) ? e : 0)) ? (e = null == c) ? e : ni(c) : e : b;
 });
-fa("cemerick.cljs.test.set_print_fn_BANG_", function(a) {
+ea("cemerick.cljs.test.set_print_fn_BANG_", function(a) {
   return ia = a;
 });
 function oi() {
   return $.a ? $.a(W(), oi) : $.call(null, W(), oi);
 }
-oi = G(oi, Sf.d(C([new m(null, 5, [Vg, 33, ih, 7, Xg, 10, O, 7, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-empty-buffer", "edin.core-test/insert-to-empty-buffer", -600855449, null), new m(null, 5, [Vg, 33, ih, 7, Xg, 10, O, 7, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+oi = G(oi, Sf.d(C([new m(null, 5, [Vg, 33, hh, 7, Xg, 10, O, 7, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-empty-buffer", "edin.core-test/insert-to-empty-buffer", -600855449, null), new m(null, 5, [Vg, 33, hh, 7, Xg, 10, O, 7, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9334,12 +9334,12 @@ oi = G(oi, Sf.d(C([new m(null, 5, [Vg, 33, ih, 7, Xg, 10, O, 7, M, "/home/edin/p
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
         null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "e", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "e")), T, f, V, null], null));
         }
         throw f;
       }
@@ -9368,7 +9368,7 @@ Mh(new w("edin.core-test", "insert-to-empty-buffer", "edin.core-test/insert-to-e
 function pi() {
   return $.a ? $.a(W(), pi) : $.call(null, W(), pi);
 }
-pi = G(pi, Sf.d(C([new m(null, 5, [Vg, 44, ih, 11, Xg, 10, O, 11, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-beginning-of-buffer", "edin.core-test/insert-to-the-beginning-of-buffer", 1555386617, null), new m(null, 5, [Vg, 44, ih, 11, Xg, 10, O, 11, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+pi = G(pi, Sf.d(C([new m(null, 5, [Vg, 44, hh, 11, Xg, 10, O, 11, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-beginning-of-buffer", "edin.core-test/insert-to-the-beginning-of-buffer", 1555386617, null), new m(null, 5, [Vg, 44, hh, 11, Xg, 10, O, 11, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9378,12 +9378,12 @@ pi = G(pi, Sf.d(C([new m(null, 5, [Vg, 44, ih, 11, Xg, 10, O, 11, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
         null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 0, "F")), T, f, V, null], null));
         }
         throw f;
       }
@@ -9412,7 +9412,7 @@ Mh(new w("edin.core-test", "insert-to-the-beginning-of-buffer", "edin.core-test/
 function qi() {
   return $.a ? $.a(W(), qi) : $.call(null, W(), qi);
 }
-qi = G(qi, Sf.d(C([new m(null, 5, [Vg, 59, ih, 15, Xg, 10, O, 15, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-beginning-of-buffer-negative-index", "edin.core-test/insert-to-the-beginning-of-buffer-negative-index", -195598332, null), new m(null, 5, [Vg, 59, ih, 15, Xg, 10, O, 15, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+qi = G(qi, Sf.d(C([new m(null, 5, [Vg, 59, hh, 15, Xg, 10, O, 15, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-beginning-of-buffer-negative-index", "edin.core-test/insert-to-the-beginning-of-buffer-negative-index", -195598332, null), new m(null, 5, [Vg, 59, hh, 15, Xg, 10, O, 15, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9422,12 +9422,12 @@ qi = G(qi, Sf.d(C([new m(null, 5, [Vg, 59, ih, 15, Xg, 10, O, 15, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
         -1501502141, null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "Fedin", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), -100, "F")), T, f, V, null], null));
         }
         throw f;
       }
@@ -9456,7 +9456,7 @@ Mh(new w("edin.core-test", "insert-to-the-beginning-of-buffer-negative-index", "
 function ri() {
   return $.a ? $.a(W(), ri) : $.call(null, W(), ri);
 }
-ri = G(ri, Sf.d(C([new m(null, 5, [Vg, 38, ih, 19, Xg, 10, O, 19, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-end-of-buffer", "edin.core-test/insert-to-the-end-of-buffer", -1456504083, null), new m(null, 5, [Vg, 38, ih, 19, Xg, 10, O, 19, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+ri = G(ri, Sf.d(C([new m(null, 5, [Vg, 38, hh, 19, Xg, 10, O, 19, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-end-of-buffer", "edin.core-test/insert-to-the-end-of-buffer", -1456504083, null), new m(null, 5, [Vg, 38, hh, 19, Xg, 10, O, 19, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9466,12 +9466,12 @@ ri = G(ri, Sf.d(C([new m(null, 5, [Vg, 38, ih, 19, Xg, 10, O, 19, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
         null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 4, "F")), T, f, V, null], null));
         }
         throw f;
       }
@@ -9500,7 +9500,7 @@ Mh(new w("edin.core-test", "insert-to-the-end-of-buffer", "edin.core-test/insert
 function si() {
   return $.a ? $.a(W(), si) : $.call(null, W(), si);
 }
-si = G(si, Sf.d(C([new m(null, 5, [Vg, 47, ih, 23, Xg, 10, O, 23, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-end-of-buffer-past-end", "edin.core-test/insert-to-the-end-of-buffer-past-end", 259899968, null), new m(null, 5, [Vg, 47, ih, 23, Xg, 10, O, 23, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+si = G(si, Sf.d(C([new m(null, 5, [Vg, 47, hh, 23, Xg, 10, O, 23, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "insert-to-the-end-of-buffer-past-end", "edin.core-test/insert-to-the-end-of-buffer-past-end", 259899968, null), new m(null, 5, [Vg, 47, hh, 23, Xg, 10, O, 23, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9510,12 +9510,12 @@ si = G(si, Sf.d(C([new m(null, 5, [Vg, 47, ih, 23, Xg, 10, O, 23, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
         -1501502141, null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edinF", K(new w("buffer", "insert", "buffer/insert", 413999114, null), new w(null, "b", "b", -1172211299, null), 100, "F")), T, f, V, null], null));
         }
         throw f;
       }
@@ -9544,7 +9544,7 @@ Mh(new w("edin.core-test", "insert-to-the-end-of-buffer-past-end", "edin.core-te
 function ti() {
   return $.a ? $.a(W(), ti) : $.call(null, W(), ti);
 }
-ti = G(ti, Sf.d(C([new m(null, 5, [Vg, 29, ih, 27, Xg, 10, O, 27, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer", "edin.core-test/remove-from-buffer", -443346661, null), new m(null, 5, [Vg, 29, ih, 27, Xg, 10, O, 27, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+ti = G(ti, Sf.d(C([new m(null, 5, [Vg, 29, hh, 27, Xg, 10, O, 27, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer", "edin.core-test/remove-from-buffer", -443346661, null), new m(null, 5, [Vg, 29, hh, 27, Xg, 10, O, 27, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9554,12 +9554,12 @@ ti = G(ti, Sf.d(C([new m(null, 5, [Vg, 29, ih, 27, Xg, 10, O, 27, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
         null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "din", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0)), T, f, V, null], null));
         }
         throw f;
       }
@@ -9588,7 +9588,7 @@ Mh(new w("edin.core-test", "remove-from-buffer", "edin.core-test/remove-from-buf
 function ui() {
   return $.a ? $.a(W(), ui) : $.call(null, W(), ui);
 }
-ui = G(ui, Sf.d(C([new m(null, 5, [Vg, 31, ih, 31, Xg, 10, O, 31, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-2", "edin.core-test/remove-from-buffer-2", -13916409, null), new m(null, 5, [Vg, 31, ih, 31, Xg, 10, O, 31, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+ui = G(ui, Sf.d(C([new m(null, 5, [Vg, 31, hh, 31, Xg, 10, O, 31, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-2", "edin.core-test/remove-from-buffer-2", -13916409, null), new m(null, 5, [Vg, 31, hh, 31, Xg, 10, O, 31, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9598,12 +9598,12 @@ ui = G(ui, Sf.d(C([new m(null, 5, [Vg, 31, ih, 31, Xg, 10, O, 31, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, 
         null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ein", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1)), T, f, V, null], null));
         }
         throw f;
       }
@@ -9632,7 +9632,7 @@ Mh(new w("edin.core-test", "remove-from-buffer-2", "edin.core-test/remove-from-b
 function vi() {
   return $.a ? $.a(W(), vi) : $.call(null, W(), vi);
 }
-vi = G(vi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 35, Xg, 10, O, 35, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-3", "edin.core-test/remove-from-buffer-3", 1537785780, null), new m(null, 5, [Vg, 31, ih, 35, Xg, 10, O, 35, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+vi = G(vi, Sf.d(C([new m(null, 5, [Vg, 31, hh, 35, Xg, 10, O, 35, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-3", "edin.core-test/remove-from-buffer-3", 1537785780, null), new m(null, 5, [Vg, 31, hh, 35, Xg, 10, O, 35, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9642,12 +9642,12 @@ vi = G(vi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 35, Xg, 10, O, 35, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
         -1501502141, null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "en", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 1, 2)), T, f, V, null], null));
         }
         throw f;
       }
@@ -9676,7 +9676,7 @@ Mh(new w("edin.core-test", "remove-from-buffer-3", "edin.core-test/remove-from-b
 function wi() {
   return $.a ? $.a(W(), wi) : $.call(null, W(), wi);
 }
-wi = G(wi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 39, Xg, 10, O, 39, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-4", "edin.core-test/remove-from-buffer-4", -1144054416, null), new m(null, 5, [Vg, 31, ih, 39, Xg, 10, O, 39, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+wi = G(wi, Sf.d(C([new m(null, 5, [Vg, 31, hh, 39, Xg, 10, O, 39, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-4", "edin.core-test/remove-from-buffer-4", -1144054416, null), new m(null, 5, [Vg, 31, hh, 39, Xg, 10, O, 39, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9686,12 +9686,12 @@ wi = G(wi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 39, Xg, 10, O, 39, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, t(t(A, F(new w(null, "\x3d", 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, t(t(A, F(new w(null, "\x3d", 
         "\x3d", -1501502141, null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edi", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 3, 100)), T, f, V, null], null));
         }
         throw f;
       }
@@ -9720,7 +9720,7 @@ Mh(new w("edin.core-test", "remove-from-buffer-4", "edin.core-test/remove-from-b
 function xi() {
   return $.a ? $.a(W(), xi) : $.call(null, W(), xi);
 }
-xi = G(xi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 43, Xg, 10, O, 43, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-5", "edin.core-test/remove-from-buffer-5", 1942807334, null), new m(null, 5, [Vg, 31, ih, 43, Xg, 10, O, 43, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+xi = G(xi, Sf.d(C([new m(null, 5, [Vg, 31, hh, 43, Xg, 10, O, 43, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "remove-from-buffer-5", "edin.core-test/remove-from-buffer-5", 1942807334, null), new m(null, 5, [Vg, 31, hh, 43, Xg, 10, O, 43, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = L.b(I(S.b(a)));
@@ -9730,12 +9730,12 @@ xi = G(xi, Sf.d(C([new m(null, 5, [Vg, 31, ih, 43, Xg, 10, O, 43, M, "/home/edin
         if (e instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(e) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
+        s(e) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, F(u, d), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, t(t(A, F(new w(null, "\x3d", "\x3d", 
         -1501502141, null), d)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return e;
       } catch (f) {
         if (f instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, f, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "", K(new w("buffer", "remove-at", "buffer/remove-at", 1638620986, null), new w(null, "b", "b", -1172211299, null), 0, 100)), T, f, V, null], null));
         }
         throw f;
       }
@@ -9764,7 +9764,7 @@ Mh(new w("edin.core-test", "remove-from-buffer-5", "edin.core-test/remove-from-b
 function yi() {
   return $.a ? $.a(W(), yi) : $.call(null, W(), yi);
 }
-yi = G(yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 47, Xg, 10, O, 47, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "count-of-lines", "edin.core-test/count-of-lines", -2141080871, null), new m(null, 5, [Vg, 25, ih, 47, Xg, 10, O, 47, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+yi = G(yi, Sf.d(C([new m(null, 5, [Vg, 25, hh, 47, Xg, 10, O, 47, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "count-of-lines", "edin.core-test/count-of-lines", -2141080871, null), new m(null, 5, [Vg, 25, hh, 47, Xg, 10, O, 47, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = ["edin", "dazdarevic"], d = L.b(I(S.b(a)));
@@ -9774,11 +9774,11 @@ yi = G(yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 47, Xg, 10, O, 47, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 
         155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "first", "first", 996428481, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -9801,12 +9801,12 @@ yi = G(yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 47, Xg, 10, O, 47, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 
         155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 10, K(new w(null, "last", "last", -1548700637, null), K(new w("buffer", "len-of-each-line", "buffer/len-of-each-line", 155874547, null), new w(null, "lines", "lines", 940365746, null)))), T, q, V, null], null));
         }
         throw q;
       }
@@ -9835,7 +9835,7 @@ Mh(new w("edin.core-test", "count-of-lines", "edin.core-test/count-of-lines", -2
 function zi() {
   return $.a ? $.a(W(), zi) : $.call(null, W(), zi);
 }
-zi = G(zi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 57, Xg, 10, O, 57, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position", "edin.core-test/cursor-position", 1811090759, null), new m(null, 5, [Vg, 26, ih, 57, Xg, 10, O, 57, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+zi = G(zi, Sf.d(C([new m(null, 5, [Vg, 26, hh, 57, Xg, 10, O, 57, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position", "edin.core-test/cursor-position", 1811090759, null), new m(null, 5, [Vg, 26, hh, 57, Xg, 10, O, 57, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Fh(7), d = L.b(I(S.b(a)));
@@ -9845,10 +9845,10 @@ zi = G(zi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 57, Xg, 10, O, 57, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -9871,11 +9871,11 @@ zi = G(zi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 57, Xg, 10, O, 57, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 2), T, q, V, null], null));
         }
         throw q;
       }
@@ -9904,7 +9904,7 @@ Mh(new w("edin.core-test", "cursor-position", "edin.core-test/cursor-position", 
 function Ai() {
   return $.a ? $.a(W(), Ai) : $.call(null, W(), Ai);
 }
-Ai = G(Ai, Sf.d(C([new m(null, 5, [Vg, 28, ih, 64, Xg, 10, O, 64, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position-2", "edin.core-test/cursor-position-2", -375088920, null), new m(null, 5, [Vg, 28, ih, 64, Xg, 10, O, 64, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ai = G(Ai, Sf.d(C([new m(null, 5, [Vg, 28, hh, 64, Xg, 10, O, 64, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position-2", "edin.core-test/cursor-position-2", -375088920, null), new m(null, 5, [Vg, 28, hh, 64, Xg, 10, O, 64, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Fh(9), d = L.b(I(S.b(a)));
@@ -9914,10 +9914,10 @@ Ai = G(Ai, Sf.d(C([new m(null, 5, [Vg, 28, ih, 64, Xg, 10, O, 64, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 1), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -9940,11 +9940,11 @@ Ai = G(Ai, Sf.d(C([new m(null, 5, [Vg, 28, ih, 64, Xg, 10, O, 64, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 4), T, q, V, null], null));
         }
         throw q;
       }
@@ -9973,7 +9973,7 @@ Mh(new w("edin.core-test", "cursor-position-2", "edin.core-test/cursor-position-
 function Bi() {
   return $.a ? $.a(W(), Bi) : $.call(null, W(), Bi);
 }
-Bi = G(Bi, Sf.d(C([new m(null, 5, [Vg, 28, ih, 71, Xg, 10, O, 71, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position-3", "edin.core-test/cursor-position-3", 1047845788, null), new m(null, 5, [Vg, 28, ih, 71, Xg, 10, O, 71, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Bi = G(Bi, Sf.d(C([new m(null, 5, [Vg, 28, hh, 71, Xg, 10, O, 71, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "cursor-position-3", "edin.core-test/cursor-position-3", 1047845788, null), new m(null, 5, [Vg, 28, hh, 71, Xg, 10, O, 71, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Fh(3), d = L.b(I(S.b(a)));
@@ -9983,10 +9983,10 @@ Bi = G(Bi, Sf.d(C([new m(null, 5, [Vg, 28, ih, 71, Xg, 10, O, 71, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "position", "position", -371200385, null)), 0), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10009,11 +10009,11 @@ Bi = G(Bi, Sf.d(C([new m(null, 5, [Vg, 28, ih, 71, Xg, 10, O, 71, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "position", "position", -371200385, null)), 3), T, q, V, null], null));
         }
         throw q;
       }
@@ -10042,7 +10042,7 @@ Mh(new w("edin.core-test", "cursor-position-3", "edin.core-test/cursor-position-
 function Ci() {
   return $.a ? $.a(W(), Ci) : $.call(null, W(), Ci);
 }
-Ci = G(Ci, Sf.d(C([new m(null, 5, [Vg, 23, ih, 79, Xg, 10, O, 79, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position", "edin.core-test/get-position", 410513472, null), new m(null, 5, [Vg, 23, ih, 79, Xg, 10, O, 79, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ci = G(Ci, Sf.d(C([new m(null, 5, [Vg, 23, hh, 79, Xg, 10, O, 79, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position", "edin.core-test/get-position", 410513472, null), new m(null, 5, [Vg, 23, hh, 79, Xg, 10, O, 79, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ah(["abcd", "efghi"], 3), d = yh(c), e = wh(d, 5), f = L.b(I(S.b(a)));
@@ -10052,10 +10052,10 @@ Ci = G(Ci, Sf.d(C([new m(null, 5, [Vg, 23, ih, 79, Xg, 10, O, 79, M, "/home/edin
         if (h instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(h) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, g), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), g)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(h) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, g), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), g)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (k) {
         if (k instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, k, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, k, V, null], null));
         } else {
           throw k;
         }
@@ -10078,11 +10078,11 @@ Ci = G(Ci, Sf.d(C([new m(null, 5, [Vg, 23, ih, 79, Xg, 10, O, 79, M, "/home/edin
         if (r instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(r) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, F(u, q), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), q)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(r) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, F(u, q), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), q)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return r;
       } catch (v) {
         if (v instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, v, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 1), T, v, V, null], null));
         }
         throw v;
       }
@@ -10111,7 +10111,7 @@ Mh(new w("edin.core-test", "get-position", "edin.core-test/get-position", 410513
 function Di() {
   return $.a ? $.a(W(), Di) : $.call(null, W(), Di);
 }
-Di = G(Di, Sf.d(C([new m(null, 5, [Vg, 35, ih, 90, Xg, 10, O, 90, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped", "edin.core-test/get-position-wordwrapped", 2026877136, null), new m(null, 5, [Vg, 35, ih, 90, Xg, 10, O, 90, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Di = G(Di, Sf.d(C([new m(null, 5, [Vg, 35, hh, 90, Xg, 10, O, 90, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped", "edin.core-test/get-position-wordwrapped", 2026877136, null), new m(null, 5, [Vg, 35, hh, 90, Xg, 10, O, 90, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edin\ndazdarevicabcd", 10, 5), d = L.b(I(S.b(a)));
@@ -10121,10 +10121,10 @@ Di = G(Di, Sf.d(C([new m(null, 5, [Vg, 35, ih, 90, Xg, 10, O, 90, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10147,11 +10147,11 @@ Di = G(Di, Sf.d(C([new m(null, 5, [Vg, 35, ih, 90, Xg, 10, O, 90, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
         }
         throw q;
       }
@@ -10180,7 +10180,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped", "edin.core-test/get-posit
 function Ei() {
   return $.a ? $.a(W(), Ei) : $.call(null, W(), Ei);
 }
-Ei = G(Ei, Sf.d(C([new m(null, 5, [Vg, 36, ih, 97, Xg, 10, O, 97, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped2", "edin.core-test/get-position-wordwrapped2", 423707310, null), new m(null, 5, [Vg, 36, ih, 97, Xg, 10, O, 97, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ei = G(Ei, Sf.d(C([new m(null, 5, [Vg, 36, hh, 97, Xg, 10, O, 97, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped2", "edin.core-test/get-position-wordwrapped2", 423707310, null), new m(null, 5, [Vg, 36, hh, 97, Xg, 10, O, 97, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edin\ndazdarevicabcd", 15, 5), d = L.b(I(S.b(a)));
@@ -10190,10 +10190,10 @@ Ei = G(Ei, Sf.d(C([new m(null, 5, [Vg, 36, ih, 97, Xg, 10, O, 97, M, "/home/edin
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 3), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10216,11 +10216,11 @@ Ei = G(Ei, Sf.d(C([new m(null, 5, [Vg, 36, ih, 97, Xg, 10, O, 97, M, "/home/edin
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
         }
         throw q;
       }
@@ -10249,7 +10249,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped2", "edin.core-test/get-posi
 function Fi() {
   return $.a ? $.a(W(), Fi) : $.call(null, W(), Fi);
 }
-Fi = G(Fi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 104, Xg, 10, O, 104, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped3", "edin.core-test/get-position-wordwrapped3", 2043894296, null), new m(null, 5, [Vg, 36, ih, 104, Xg, 10, O, 104, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Fi = G(Fi, Sf.d(C([new m(null, 5, [Vg, 36, hh, 104, Xg, 10, O, 104, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped3", "edin.core-test/get-position-wordwrapped3", 2043894296, null), new m(null, 5, [Vg, 36, hh, 104, Xg, 10, O, 104, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edind\ndazdarevicabcd", 10, 5), d = L.b(I(S.b(a)));
@@ -10259,10 +10259,10 @@ Fi = G(Fi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 104, Xg, 10, O, 104, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10285,11 +10285,11 @@ Fi = G(Fi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 104, Xg, 10, O, 104, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, q, V, null], null));
         }
         throw q;
       }
@@ -10318,7 +10318,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped3", "edin.core-test/get-posi
 function Gi() {
   return $.a ? $.a(W(), Gi) : $.call(null, W(), Gi);
 }
-Gi = G(Gi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 112, Xg, 10, O, 112, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped4", "edin.core-test/get-position-wordwrapped4", -1452348754, null), new m(null, 5, [Vg, 36, ih, 112, Xg, 10, O, 112, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Gi = G(Gi, Sf.d(C([new m(null, 5, [Vg, 36, hh, 112, Xg, 10, O, 112, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped4", "edin.core-test/get-position-wordwrapped4", -1452348754, null), new m(null, 5, [Vg, 36, hh, 112, Xg, 10, O, 112, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edind\ndazdarevicabcd", 16, 5), d = L.b(I(S.b(a)));
@@ -10328,10 +10328,10 @@ Gi = G(Gi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 112, Xg, 10, O, 112, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 4), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10354,11 +10354,11 @@ Gi = G(Gi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 112, Xg, 10, O, 112, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
         }
         throw q;
       }
@@ -10387,7 +10387,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped4", "edin.core-test/get-posi
 function Hi() {
   return $.a ? $.a(W(), Hi) : $.call(null, W(), Hi);
 }
-Hi = G(Hi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 119, Xg, 10, O, 119, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped5", "edin.core-test/get-position-wordwrapped5", 769936262, null), new m(null, 5, [Vg, 36, ih, 119, Xg, 10, O, 119, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Hi = G(Hi, Sf.d(C([new m(null, 5, [Vg, 36, hh, 119, Xg, 10, O, 119, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped5", "edin.core-test/get-position-wordwrapped5", 769936262, null), new m(null, 5, [Vg, 36, hh, 119, Xg, 10, O, 119, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edin\n", 2, 5), d = L.b(I(S.b(a)));
@@ -10397,10 +10397,10 @@ Hi = G(Hi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 119, Xg, 10, O, 119, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10423,11 +10423,11 @@ Hi = G(Hi, Sf.d(C([new m(null, 5, [Vg, 36, ih, 119, Xg, 10, O, 119, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, q, V, null], null));
         }
         throw q;
       }
@@ -10456,7 +10456,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped5", "edin.core-test/get-posi
 function Ii() {
   return $.a ? $.a(W(), Ii) : $.call(null, W(), Ii);
 }
-Ii = G(Ii, Sf.d(C([new m(null, 5, [Vg, 36, ih, 126, Xg, 10, O, 126, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped6", "edin.core-test/get-position-wordwrapped6", 1217254903, null), new m(null, 5, [Vg, 36, ih, 126, Xg, 10, O, 126, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ii = G(Ii, Sf.d(C([new m(null, 5, [Vg, 36, hh, 126, Xg, 10, O, 126, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped6", "edin.core-test/get-position-wordwrapped6", 1217254903, null), new m(null, 5, [Vg, 36, hh, 126, Xg, 10, O, 126, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edin\n", 0, 5), d = L.b(I(S.b(a)));
@@ -10466,10 +10466,10 @@ Ii = G(Ii, Sf.d(C([new m(null, 5, [Vg, 36, ih, 126, Xg, 10, O, 126, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10492,11 +10492,11 @@ Ii = G(Ii, Sf.d(C([new m(null, 5, [Vg, 36, ih, 126, Xg, 10, O, 126, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
         }
         throw q;
       }
@@ -10525,7 +10525,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped6", "edin.core-test/get-posi
 function Ji() {
   return $.a ? $.a(W(), Ji) : $.call(null, W(), Ji);
 }
-Ji = G(Ji, Sf.d(C([new m(null, 5, [Vg, 36, ih, 133, Xg, 10, O, 133, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped7", "edin.core-test/get-position-wordwrapped7", 1247247636, null), new m(null, 5, [Vg, 36, ih, 133, Xg, 10, O, 133, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ji = G(Ji, Sf.d(C([new m(null, 5, [Vg, 36, hh, 133, Xg, 10, O, 133, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped7", "edin.core-test/get-position-wordwrapped7", 1247247636, null), new m(null, 5, [Vg, 36, hh, 133, Xg, 10, O, 133, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("edin\na", 4, 5), d = L.b(I(S.b(a)));
@@ -10535,10 +10535,10 @@ Ji = G(Ji, Sf.d(C([new m(null, 5, [Vg, 36, ih, 133, Xg, 10, O, 133, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 0), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10561,11 +10561,11 @@ Ji = G(Ji, Sf.d(C([new m(null, 5, [Vg, 36, ih, 133, Xg, 10, O, 133, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 4), T, q, V, null], null));
         }
         throw q;
       }
@@ -10594,7 +10594,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped7", "edin.core-test/get-posi
 function Ki() {
   return $.a ? $.a(W(), Ki) : $.call(null, W(), Ki);
 }
-Ki = G(Ki, Sf.d(C([new m(null, 5, [Vg, 36, ih, 140, Xg, 10, O, 140, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped8", "edin.core-test/get-position-wordwrapped8", -396324931, null), new m(null, 5, [Vg, 36, ih, 140, Xg, 10, O, 140, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ki = G(Ki, Sf.d(C([new m(null, 5, [Vg, 36, hh, 140, Xg, 10, O, 140, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped8", "edin.core-test/get-position-wordwrapped8", -396324931, null), new m(null, 5, [Vg, 36, hh, 140, Xg, 10, O, 140, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("e\nedin", 4, 5), d = L.b(I(S.b(a)));
@@ -10604,10 +10604,10 @@ Ki = G(Ki, Sf.d(C([new m(null, 5, [Vg, 36, ih, 140, Xg, 10, O, 140, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 1), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10630,11 +10630,11 @@ Ki = G(Ki, Sf.d(C([new m(null, 5, [Vg, 36, ih, 140, Xg, 10, O, 140, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 2), T, q, V, null], null));
         }
         throw q;
       }
@@ -10663,7 +10663,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped8", "edin.core-test/get-posi
 function Li() {
   return $.a ? $.a(W(), Li) : $.call(null, W(), Li);
 }
-Li = G(Li, Sf.d(C([new m(null, 5, [Vg, 36, ih, 147, Xg, 10, O, 147, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped9", "edin.core-test/get-position-wordwrapped9", 6305514, null), new m(null, 5, [Vg, 36, ih, 147, Xg, 10, O, 147, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Li = G(Li, Sf.d(C([new m(null, 5, [Vg, 36, hh, 147, Xg, 10, O, 147, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "get-position-wordwrapped9", "edin.core-test/get-position-wordwrapped9", 6305514, null), new m(null, 5, [Vg, 36, hh, 147, Xg, 10, O, 147, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Gh("e\nedin", 4, 2), d = L.b(I(S.b(a)));
@@ -10673,10 +10673,10 @@ Li = G(Li, Sf.d(C([new m(null, 5, [Vg, 36, ih, 147, Xg, 10, O, 147, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "pos", "pos", 775924307, null)), 2), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -10699,11 +10699,11 @@ Li = G(Li, Sf.d(C([new m(null, 5, [Vg, 36, ih, 147, Xg, 10, O, 147, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return p;
       } catch (q) {
         if (q instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "pos", "pos", 775924307, null)), 0), T, q, V, null], null));
         }
         throw q;
       }
@@ -10732,7 +10732,7 @@ Mh(new w("edin.core-test", "get-position-wordwrapped9", "edin.core-test/get-posi
 function Mi() {
   return $.a ? $.a(W(), Mi) : $.call(null, W(), Mi);
 }
-Mi = G(Mi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 154, Xg, 10, O, 154, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left1", "edin.core-test/move-left1", -2096914020, null), new m(null, 5, [Vg, 21, ih, 154, Xg, 10, O, 154, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Mi = G(Mi, Sf.d(C([new m(null, 5, [Vg, 21, hh, 154, Xg, 10, O, 154, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left1", "edin.core-test/move-left1", -2096914020, null), new m(null, 5, [Vg, 21, hh, 154, Xg, 10, O, 154, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Bh(3), d = L.b(I(S.b(a)));
@@ -10742,11 +10742,11 @@ Mi = G(Mi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 154, Xg, 10, O, 154, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10775,7 +10775,7 @@ Mh(new w("edin.core-test", "move-left1", "edin.core-test/move-left1", -209691402
 function Ni() {
   return $.a ? $.a(W(), Ni) : $.call(null, W(), Ni);
 }
-Ni = G(Ni, Sf.d(C([new m(null, 5, [Vg, 21, ih, 161, Xg, 10, O, 161, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left2", "edin.core-test/move-left2", 103082622, null), new m(null, 5, [Vg, 21, ih, 161, Xg, 10, O, 161, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ni = G(Ni, Sf.d(C([new m(null, 5, [Vg, 21, hh, 161, Xg, 10, O, 161, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left2", "edin.core-test/move-left2", 103082622, null), new m(null, 5, [Vg, 21, hh, 161, Xg, 10, O, 161, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Bh(4), d = L.b(I(S.b(a)));
@@ -10785,11 +10785,11 @@ Ni = G(Ni, Sf.d(C([new m(null, 5, [Vg, 21, ih, 161, Xg, 10, O, 161, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 3, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10818,7 +10818,7 @@ Mh(new w("edin.core-test", "move-left2", "edin.core-test/move-left2", 103082622,
 function Oi() {
   return $.a ? $.a(W(), Oi) : $.call(null, W(), Oi);
 }
-Oi = G(Oi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 167, Xg, 10, O, 167, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left3", "edin.core-test/move-left3", -922367081, null), new m(null, 5, [Vg, 21, ih, 167, Xg, 10, O, 167, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Oi = G(Oi, Sf.d(C([new m(null, 5, [Vg, 21, hh, 167, Xg, 10, O, 167, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left3", "edin.core-test/move-left3", -922367081, null), new m(null, 5, [Vg, 21, hh, 167, Xg, 10, O, 167, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Bh(1), d = L.b(I(S.b(a)));
@@ -10828,11 +10828,11 @@ Oi = G(Oi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 167, Xg, 10, O, 167, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10861,7 +10861,7 @@ Mh(new w("edin.core-test", "move-left3", "edin.core-test/move-left3", -922367081
 function Pi() {
   return $.a ? $.a(W(), Pi) : $.call(null, W(), Pi);
 }
-Pi = G(Pi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 173, Xg, 10, O, 173, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left4", "edin.core-test/move-left4", 1838202282, null), new m(null, 5, [Vg, 21, ih, 173, Xg, 10, O, 173, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Pi = G(Pi, Sf.d(C([new m(null, 5, [Vg, 21, hh, 173, Xg, 10, O, 173, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-left4", "edin.core-test/move-left4", 1838202282, null), new m(null, 5, [Vg, 21, hh, 173, Xg, 10, O, 173, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Bh(0), d = L.b(I(S.b(a)));
@@ -10871,11 +10871,11 @@ Pi = G(Pi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 173, Xg, 10, O, 173, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 0, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10904,7 +10904,7 @@ Mh(new w("edin.core-test", "move-left4", "edin.core-test/move-left4", 1838202282
 function Qi() {
   return $.a ? $.a(W(), Qi) : $.call(null, W(), Qi);
 }
-Qi = G(Qi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 179, Xg, 10, O, 179, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right", "edin.core-test/move-right", -702971214, null), new m(null, 5, [Vg, 21, ih, 179, Xg, 10, O, 179, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Qi = G(Qi, Sf.d(C([new m(null, 5, [Vg, 21, hh, 179, Xg, 10, O, 179, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right", "edin.core-test/move-right", -702971214, null), new m(null, 5, [Vg, 21, hh, 179, Xg, 10, O, 179, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ch("edin", 0), d = L.b(I(S.b(a)));
@@ -10914,11 +10914,11 @@ Qi = G(Qi, Sf.d(C([new m(null, 5, [Vg, 21, ih, 179, Xg, 10, O, 179, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 1, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10947,7 +10947,7 @@ Mh(new w("edin.core-test", "move-right", "edin.core-test/move-right", -702971214
 function Ri() {
   return $.a ? $.a(W(), Ri) : $.call(null, W(), Ri);
 }
-Ri = G(Ri, Sf.d(C([new m(null, 5, [Vg, 22, ih, 185, Xg, 10, O, 185, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right2", "edin.core-test/move-right2", -733627237, null), new m(null, 5, [Vg, 22, ih, 185, Xg, 10, O, 185, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ri = G(Ri, Sf.d(C([new m(null, 5, [Vg, 22, hh, 185, Xg, 10, O, 185, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right2", "edin.core-test/move-right2", -733627237, null), new m(null, 5, [Vg, 22, hh, 185, Xg, 10, O, 185, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ch("edin", 1), d = L.b(I(S.b(a)));
@@ -10957,11 +10957,11 @@ Ri = G(Ri, Sf.d(C([new m(null, 5, [Vg, 22, ih, 185, Xg, 10, O, 185, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 2, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -10990,7 +10990,7 @@ Mh(new w("edin.core-test", "move-right2", "edin.core-test/move-right2", -7336272
 function Si() {
   return $.a ? $.a(W(), Si) : $.call(null, W(), Si);
 }
-Si = G(Si, Sf.d(C([new m(null, 5, [Vg, 22, ih, 191, Xg, 10, O, 191, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right3", "edin.core-test/move-right3", -1534908843, null), new m(null, 5, [Vg, 22, ih, 191, Xg, 10, O, 191, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Si = G(Si, Sf.d(C([new m(null, 5, [Vg, 22, hh, 191, Xg, 10, O, 191, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right3", "edin.core-test/move-right3", -1534908843, null), new m(null, 5, [Vg, 22, hh, 191, Xg, 10, O, 191, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ch("edin", 3), d = L.b(I(S.b(a)));
@@ -11000,11 +11000,11 @@ Si = G(Si, Sf.d(C([new m(null, 5, [Vg, 22, ih, 191, Xg, 10, O, 191, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -11033,7 +11033,7 @@ Mh(new w("edin.core-test", "move-right3", "edin.core-test/move-right3", -1534908
 function Ti() {
   return $.a ? $.a(W(), Ti) : $.call(null, W(), Ti);
 }
-Ti = G(Ti, Sf.d(C([new m(null, 5, [Vg, 22, ih, 197, Xg, 10, O, 197, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right4", "edin.core-test/move-right4", 1425728362, null), new m(null, 5, [Vg, 22, ih, 197, Xg, 10, O, 197, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ti = G(Ti, Sf.d(C([new m(null, 5, [Vg, 22, hh, 197, Xg, 10, O, 197, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-right4", "edin.core-test/move-right4", 1425728362, null), new m(null, 5, [Vg, 22, hh, 197, Xg, 10, O, 197, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ch("edin", 4), d = L.b(I(S.b(a)));
@@ -11043,11 +11043,11 @@ Ti = G(Ti, Sf.d(C([new m(null, 5, [Vg, 22, ih, 197, Xg, 10, O, 197, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, new w(null, "new-pos", "new-pos", 1449459474, null)), T, g, V, null], null));
         }
         throw g;
       }
@@ -11076,7 +11076,7 @@ Mh(new w("edin.core-test", "move-right4", "edin.core-test/move-right4", 14257283
 function Ui() {
   return $.a ? $.a(W(), Ui) : $.call(null, W(), Ui);
 }
-Ui = G(Ui, Sf.d(C([new m(null, 5, [Vg, 28, ih, 203, Xg, 10, O, 203, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-and-position", "edin.core-test/move-and-position", -1900932623, null), new m(null, 5, [Vg, 28, ih, 203, Xg, 10, O, 203, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Ui = G(Ui, Sf.d(C([new m(null, 5, [Vg, 28, hh, 203, Xg, 10, O, 203, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "move-and-position", "edin.core-test/move-and-position", -1900932623, null), new m(null, 5, [Vg, 28, hh, 203, Xg, 10, O, 203, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Ch("edin\ndazdarevic", 4), d = Fh(c), e = L.b(I(S.b(a)));
@@ -11086,10 +11086,10 @@ Ui = G(Ui, Sf.d(C([new m(null, 5, [Vg, 28, ih, 203, Xg, 10, O, 203, M, "/home/ed
         if (g instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(g) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, F(u, f), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), f)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(g) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, F(u, f), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), f)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (h) {
         if (h instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, h, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(O, new w(null, "coords", "coords", 1041102415, null)), 1), T, h, V, null], null));
         } else {
           throw h;
         }
@@ -11112,11 +11112,11 @@ Ui = G(Ui, Sf.d(C([new m(null, 5, [Vg, 28, ih, 203, Xg, 10, O, 203, M, "/home/ed
         if (q instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(q) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, F(u, p), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), p)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(q) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, F(u, p), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), p)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return q;
       } catch (r) {
         if (r instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, r, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), K(dh, new w(null, "coords", "coords", 1041102415, null)), 0), T, r, V, null], null));
         }
         throw r;
       }
@@ -11145,7 +11145,7 @@ Mh(new w("edin.core-test", "move-and-position", "edin.core-test/move-and-positio
 function Vi() {
   return $.a ? $.a(W(), Vi) : $.call(null, W(), Vi);
 }
-Vi = G(Vi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 211, Xg, 10, O, 211, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "idx-of-negative", "edin.core-test/idx-of-negative", -177604033, null), new m(null, 5, [Vg, 26, ih, 211, Xg, 10, O, 211, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Vi = G(Vi, Sf.d(C([new m(null, 5, [Vg, 26, hh, 211, Xg, 10, O, 211, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "idx-of-negative", "edin.core-test/idx-of-negative", -177604033, null), new m(null, 5, [Vg, 26, hh, 211, Xg, 10, O, 211, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = new De(null, 3, 5, Ee, [3, 1, 9], null), d = vh(c, 7), e = ad.a(dd, ce.a(d, c)), f = L.b(I(S.b(a)));
@@ -11155,10 +11155,10 @@ Vi = G(Vi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 211, Xg, 10, O, 211, M, "/home/ed
         if (h instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(h) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, F(u, g), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), g)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(h) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, F(u, g), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), g)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (k) {
         if (k instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, k, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "idx", "idx", -1600747296, null), 2), T, k, V, null], null));
         } else {
           throw k;
         }
@@ -11181,11 +11181,11 @@ Vi = G(Vi, Sf.d(C([new m(null, 5, [Vg, 26, ih, 211, Xg, 10, O, 211, M, "/home/ed
         if (r instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(r) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, F(u, q), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), q)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(r) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, F(u, q), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), q)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return r;
       } catch (v) {
         if (v instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, v, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "sum", "sum", 1777518341, null), 4), T, v, V, null], null));
         }
         throw v;
       }
@@ -11214,7 +11214,7 @@ Mh(new w("edin.core-test", "idx-of-negative", "edin.core-test/idx-of-negative", 
 function Wi() {
   return $.a ? $.a(W(), Wi) : $.call(null, W(), Wi);
 }
-Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "ensure-bounds1", "edin.core-test/ensure-bounds1", 292260224, null), new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, hh, 221, Xg, 10, O, 221, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "ensure-bounds1", "edin.core-test/ensure-bounds1", 292260224, null), new m(null, 5, [Vg, 25, hh, 221, Xg, 10, O, 221, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = Dh(0, 101), d = Dh(0, 100), e = Dh(0, -1), f = Dh(0, 50), g = Dh(50, 49), h = L.b(I(S.b(a)));
@@ -11224,10 +11224,10 @@ Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/ed
         if (n instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(n) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, F(u, k), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), k)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(n) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, F(u, k), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), k)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (p) {
         if (p instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, p, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value1", "value1", 906467814, null), 100), T, p, V, null], null));
         } else {
           throw p;
         }
@@ -11250,10 +11250,10 @@ Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/ed
         if (x instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(x) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, F(u, v), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), v)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(x) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, F(u, v), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), v)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (D) {
         if (D instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, D, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value2", "value2", 1820803460, null), 100), T, D, V, null], null));
         } else {
           throw D;
         }
@@ -11269,24 +11269,24 @@ Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/ed
         throw J;
       }
     }
-    var P = L.b(I(S.b(a)));
+    var Q = L.b(I(S.b(a)));
     try {
       try {
-        var X = t(t(A, 0), e), ea = H.a(u, X);
-        if (ea instanceof Nh) {
+        var X = t(t(A, 0), e), fa = H.a(u, X);
+        if (fa instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(ea) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, F(u, X), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), X)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(fa) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, F(u, X), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), X)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (qa) {
         if (qa instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, qa, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value3", "value3", 560313196, null), 0), T, qa, V, null], null));
         } else {
           throw qa;
         }
       }
     } catch (R) {
       if (R instanceof Error) {
-        if (s(P)) {
+        if (s(Q)) {
           Z.a(a, R);
         } else {
           throw R;
@@ -11302,10 +11302,10 @@ Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/ed
         if (sa instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(sa) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, F(u, ld), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), ld)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(sa) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, F(u, ld), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), ld)), new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (ua) {
         if (ua instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, ua, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value4", "value4", 1087133538, null), 50), T, ua, V, null], null));
         } else {
           throw ua;
         }
@@ -11328,11 +11328,11 @@ Wi = G(Wi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 221, Xg, 10, O, 221, M, "/home/ed
         if (Ia instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(Ia) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, F(u, Ba), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), Ba)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(Ia) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, F(u, Ba), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), Ba)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return Ia;
       } catch (Ka) {
         if (Ka instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, Ka, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "value5", "value5", 1159865036, null), 50), T, Ka, V, null], null));
         }
         throw Ka;
       }
@@ -11361,21 +11361,21 @@ Mh(new w("edin.core-test", "ensure-bounds1", "edin.core-test/ensure-bounds1", 29
 function Xi() {
   return $.a ? $.a(W(), Xi) : $.call(null, W(), Xi);
 }
-Xi = G(Xi, Sf.d(C([new m(null, 5, [Vg, 23, ih, 235, Xg, 10, O, 235, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "prev-newline", "edin.core-test/prev-newline", 36665709, null), new m(null, 5, [Vg, 23, ih, 235, Xg, 10, O, 235, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Xi = G(Xi, Sf.d(C([new m(null, 5, [Vg, 23, hh, 235, Xg, 10, O, 235, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "prev-newline", "edin.core-test/prev-newline", 36665709, null), new m(null, 5, [Vg, 23, hh, 235, Xg, 10, O, 235, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
-    var c = Eh(), d = L.b(I(S.b(a)));
+    var c = Eh("edin\ndazdarevic", 7), d = L.b(I(S.b(a)));
     try {
       try {
         var e = t(t(A, 4), c), f = H.a(u, e);
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
         return f;
       } catch (g) {
         if (g instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, g, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 4), T, g, V, null], null));
         }
         throw g;
       }
@@ -11404,7 +11404,50 @@ Mh(new w("edin.core-test", "prev-newline", "edin.core-test/prev-newline", 366657
 function Yi() {
   return $.a ? $.a(W(), Yi) : $.call(null, W(), Yi);
 }
-Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "word-wrap-test", "edin.core-test/word-wrap-test", -1535454655, null), new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 24, hh, 241, Xg, 10, O, 241, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "prev-newline2", "edin.core-test/prev-newline2", 1572314711, null), new m(null, 5, [Vg, 24, hh, 241, Xg, 10, O, 241, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
+  var b = L.b(I(S.b(a)));
+  try {
+    var c = Eh("ed\nin\nd", 6), d = L.b(I(S.b(a)));
+    try {
+      try {
+        var e = t(t(A, 5), c), f = H.a(u, e);
+        if (f instanceof Nh) {
+          throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
+        }
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 5), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 5), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, "not", "not", 1044554643, null)), V, null], null));
+        return f;
+      } catch (g) {
+        if (g instanceof Error) {
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), new w(null, "newline-index", "newline-index", -854281199, null), 5), T, g, V, null], null));
+        }
+        throw g;
+      }
+    } catch (h) {
+      if (h instanceof Error) {
+        c = h;
+        if (s(d)) {
+          return Z.a(a, c);
+        }
+        throw c;
+      }
+      throw h;
+    }
+  } catch (k) {
+    if (k instanceof Error) {
+      c = k;
+      if (s(b)) {
+        return Z.a(a, c);
+      }
+      throw c;
+    }
+    throw k;
+  }
+}], null)], 0)));
+Mh(new w("edin.core-test", "prev-newline2", "edin.core-test/prev-newline2", 1572314711, null), Yi);
+function Zi() {
+  return $.a ? $.a(W(), Zi) : $.call(null, W(), Zi);
+}
+Zi = G(Zi, Sf.d(C([new m(null, 5, [Vg, 25, hh, 247, Xg, 10, O, 247, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null), new m(null, 2, [Tg, G(new w("edin.core-test", "word-wrap-test", "edin.core-test/word-wrap-test", -1535454655, null), new m(null, 5, [Vg, 25, hh, 247, Xg, 10, O, 247, M, "/home/edin/projects/edin/test/edin/main_test.cljs"], null)), ph, function(a) {
   var b = L.b(I(S.b(a)));
   try {
     var c = zh("edindazdarevic", 4), d = L.b(I(S.b(a)));
@@ -11414,11 +11457,11 @@ Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/ed
         if (f instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(f) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, 
+        s(f) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, F(u, e), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), e)), new w(null, 
         "not", "not", 1044554643, null)), V, null], null));
       } catch (g) {
         if (g instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, g, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), 4, K(new w(null, "count", "count", -514511684, null), new w(null, "wrapped", "wrapped", -879263068, null))), T, g, V, null], null));
         } else {
           throw g;
         }
@@ -11441,11 +11484,11 @@ Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/ed
         if (p instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(p) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), 
+        s(p) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, F(u, n), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), n)), 
         new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (q) {
         if (q instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, q, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "edin", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 0)), T, q, V, null], null));
         } else {
           throw q;
         }
@@ -11468,38 +11511,38 @@ Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/ed
         if (D instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(D) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, F(u, x), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), x)), 
+        s(D) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, F(u, x), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), x)), 
         new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (J) {
         if (J instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, J, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "dazd", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 1)), T, J, V, null], null));
         } else {
           throw J;
         }
       }
-    } catch (P) {
-      if (P instanceof Error) {
+    } catch (Q) {
+      if (Q instanceof Error) {
         if (s(v)) {
-          Z.a(a, P);
+          Z.a(a, Q);
         } else {
-          throw P;
+          throw Q;
         }
       } else {
-        throw P;
+        throw Q;
       }
     }
     var X = L.b(I(S.b(a)));
     try {
       try {
-        var ea = t(t(A, Fc.a(c, 2)), "arev"), qa = H.a(u, ea);
+        var fa = t(t(A, Fc.a(c, 2)), "arev"), qa = H.a(u, fa);
         if (qa instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(qa) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, F(u, ea), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), ea)), 
+        s(qa) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, F(u, fa), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), fa)), 
         new w(null, "not", "not", 1044554643, null)), V, null], null));
       } catch (R) {
         if (R instanceof Error) {
-          Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, R, V, null], null));
+          Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "arev", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 2)), T, R, V, null], null));
         } else {
           throw R;
         }
@@ -11522,12 +11565,12 @@ Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/ed
         if (ua instanceof Nh) {
           throw Error("TestContext provided as [form] in `is` assertion. If using `is` with an explicit test context, use the 3-arg arity.");
         }
-        s(ua) ? Y.a(a, new m(null, 4, [N, mh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, F(u, sa), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), sa)), 
+        s(ua) ? Y.a(a, new m(null, 4, [N, mh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, F(u, sa), V, null], null)) : Y.a(a, new m(null, 4, [N, bh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, t(t(A, F(new w(null, "\x3d", "\x3d", -1501502141, null), sa)), 
         new w(null, "not", "not", 1044554643, null)), V, null], null));
         return ua;
       } catch (wa) {
         if (wa instanceof Error) {
-          return Y.a(a, new m(null, 4, [N, kh, Q, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, wa, V, null], null));
+          return Y.a(a, new m(null, 4, [N, kh, P, K(new w(null, "\x3d", "\x3d", -1501502141, null), "ic", K(new w(null, "nth", "nth", 1529209554, null), new w(null, "wrapped", "wrapped", -879263068, null), 3)), T, wa, V, null], null));
         }
         throw wa;
       }
@@ -11552,6 +11595,6 @@ Yi = G(Yi, Sf.d(C([new m(null, 5, [Vg, 25, ih, 241, Xg, 10, O, 241, M, "/home/ed
     throw Ba;
   }
 }], null)], 0)));
-Mh(new w("edin.core-test", "word-wrap-test", "edin.core-test/word-wrap-test", -1535454655, null), Yi);
+Mh(new w("edin.core-test", "word-wrap-test", "edin.core-test/word-wrap-test", -1535454655, null), Zi);
 
 })();
