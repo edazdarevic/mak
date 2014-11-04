@@ -92,29 +92,29 @@
         pos (buffer/position-to-cursor-wrapped b 10 5)]
 
         (is (= (:line pos) 2))
-        (is (= (:col pos)  1))))
+        (is (= (:col pos)  0))))
 
 (deftest get-position-wordwrapped2
   (let [b (buffer/create-buffer "edin\ndazdarevicabcd")
         pos (buffer/position-to-cursor-wrapped b 15 5)]
 
         (is (= (:line pos) 3))
-        (is (= (:col pos)  1))))
+        (is (= (:col pos)  0))))
 
 (deftest get-position-wordwrapped3
   (let [b (buffer/create-buffer "edind\ndazdarevicabcd")
         pos (buffer/position-to-cursor-wrapped b 10 5)]
 
         (is (= (:line pos) 2))
-        (is (= (:col pos)  0))))
+        (is (= (:col pos)  4))))
 
 
 (deftest get-position-wordwrapped4
   (let [b (buffer/create-buffer "edind\ndazdarevicabcd")
         pos (buffer/position-to-cursor-wrapped b 16 5)]
 
-        (is (= (:line pos) 3))
-        (is (= (:col pos)  1))))
+        (is (= (:line pos) 4))
+        (is (= (:col pos)  0))))
 
 (deftest get-position-wordwrapped5
   (let [b (buffer/create-buffer "edin\n")
@@ -134,9 +134,80 @@
   (let [b (buffer/create-buffer "edin\na")
         pos (buffer/position-to-cursor-wrapped b 4 5)]
 
+        (is (= (:line pos) 0))
+        (is (= (:col pos)  4))))
+
+(deftest get-position-wordwrapped8
+  (let [b (buffer/create-buffer "e\nedin")
+        pos (buffer/position-to-cursor-wrapped b 4 5)]
+
         (is (= (:line pos) 1))
+        (is (= (:col pos)  2))))
+
+(deftest get-position-wordwrapped9
+  (let [b (buffer/create-buffer "e\nedin")
+        pos (buffer/position-to-cursor-wrapped b 4 2)]
+
+        (is (= (:line pos) 2))
         (is (= (:col pos)  0))))
 
+(deftest move-left1
+  (let [b (buffer/create-buffer "edin")
+        pos 3
+        new-pos (buffer/move-left b pos)]
+        (is (= 2 new-pos))))
+
+
+(deftest move-left2
+  (let [b (buffer/create-buffer "edin")
+        pos 4
+        new-pos (buffer/move-left b pos)]
+        (is (= 3 new-pos))))
+
+(deftest move-left3
+  (let [b (buffer/create-buffer "edin")
+        pos 1
+        new-pos (buffer/move-left b pos)]
+        (is (= 0 new-pos))))
+
+(deftest move-left4
+  (let [b (buffer/create-buffer "edin")
+        pos 0
+        new-pos (buffer/move-left b pos)]
+        (is (= 0 new-pos))))
+
+(deftest move-right
+  (let [b (buffer/create-buffer "edin")
+        pos 0
+        new-pos (buffer/move-right b pos)]
+        (is (= 1 new-pos))))
+
+(deftest move-right2
+  (let [b (buffer/create-buffer "edin")
+        pos 1
+        new-pos (buffer/move-right b pos)]
+        (is (= 2 new-pos))))
+
+(deftest move-right3
+  (let [b (buffer/create-buffer "edin")
+        pos 3
+        new-pos (buffer/move-right b pos)]
+        (is (= 4 new-pos))))
+
+(deftest move-right4
+  (let [b (buffer/create-buffer "edin")
+        pos 4
+        new-pos (buffer/move-right b pos)]
+        (is (= 4 new-pos))))
+
+(deftest move-and-position
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+        pos 4
+        new-pos (buffer/move-right b pos)
+        coords (buffer/buffer-position-to-cursor (buffer/to-lines b) new-pos)]
+        (is (= (:line coords) 1))
+        (is (= (:col coords) 0))
+        ))
 (deftest idx-of-negative
   (let [b (buffer/create-buffer "edin\ndazdarevic")
         a [3 1 9]

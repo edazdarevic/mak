@@ -56,6 +56,11 @@
   [buff]
   (.split buff "\n"))
 
+(defn to-lines2
+  "Splits a buffer to a list of lines"
+  [buff]
+  (map #(str % "\n") (.split buff "\n")))
+
 (defn len-of-each-line
   [lines]
   (map
@@ -75,7 +80,13 @@
   (mapcat #(word-wrap % size) lines))
 
 
+(defn move-left
+  [buff position]
+  (max 0 (min (- position 1) (count buff))))
 
+(defn move-right
+  [buff position]
+  (max 0 (min (+ position 1) (count buff))))
 
 (defn buffer-position-to-cursor
 
@@ -101,7 +112,7 @@
 
 (defn position-to-cursor-wrapped
   [buff position wrap-size]
-  (let [lines (to-lines buff)
+  (let [lines (to-lines2 buff)
         wrapped (word-wrap-lines lines wrap-size)
         sizes (len-of-each-line wrapped)]
 
