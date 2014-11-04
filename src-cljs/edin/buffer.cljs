@@ -88,6 +88,22 @@
   [buff position]
   (max 0 (min (+ position 1) (count buff))))
 
+(defn ensure-bounds
+  [start end value]
+  (max start (min end value)))
+
+(defn prev-newline-index
+  [buff position]
+  (- position (count
+    (take-while
+      #(not= % "\n")
+      (reverse
+        (take (inc position) buff))))))
+
+(defn move-up
+  "Returns new position based on move up"
+  [buff current-position])
+
 (defn buffer-position-to-cursor
 
   [all-lines position]

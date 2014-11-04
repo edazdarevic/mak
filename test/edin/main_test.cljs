@@ -218,6 +218,26 @@
 
    ))
 
+(deftest ensure-bounds1
+  (let [value1 (buffer/ensure-bounds 0 100 101)
+        value2 (buffer/ensure-bounds 0 100 100)
+        value3 (buffer/ensure-bounds 0 100 -1)
+        value4 (buffer/ensure-bounds 0 100 50)
+        value5 (buffer/ensure-bounds 50 100 49)]
+    (is (= value1 100))
+    (is (= value2 100))
+    (is (= value3 0))
+    (is (= value4 50))
+    (is (= value5 50))
+    )
+  )
+
+(deftest prev-newline
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+        newline-index (buffer/prev-newline-index b 7)]
+        (is (= newline-index 4))
+    ))
+
 (deftest word-wrap-test
   (let [b (buffer/create-buffer "edindazdarevic")
     wrapped (buffer/word-wrap b 4)]
