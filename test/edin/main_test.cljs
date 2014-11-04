@@ -238,6 +238,12 @@
         (is (= newline-index 4))
     ))
 
+(deftest prev-newline2
+  (let [b (buffer/create-buffer "ed\nin\nd")
+        newline-index (buffer/prev-newline-index b 6)]
+        (is (= newline-index 5))
+    ))
+
 (deftest word-wrap-test
   (let [b (buffer/create-buffer "edindazdarevic")
     wrapped (buffer/word-wrap b 4)]
