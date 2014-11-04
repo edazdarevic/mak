@@ -30,6 +30,27 @@
 
 ; (first (indices pos? [-1 0 99 100 101]))
 
+(defn get-index-of-negative
+  [coll value]
+    (let [idx (first (indices #(< % 0) (reduce #(concat %1 [(- (last %1) %2)]) [value] coll)))]
+        (dec idx)))
+
+
+
+(defn sum-up-to
+  [coll n]
+  (reduce + (take n coll)))
+
+(defn get-position
+  [sizes position]
+    (let [idx (get-index-of-negative sizes position)
+          s (sum-up-to sizes idx)
+          f (- position s)]
+
+          { :line idx :col f }
+      )
+  )
+
 (defn to-lines
   "Splits a buffer to a list of lines"
   [buff]
@@ -49,12 +70,16 @@
   [buff size]
   (map (fn[item] (reduce #(str %1 %2) item)) (partition-all size buff)))
 
+(defn word-wrap-lines
+  [lines size]
+  (mapcat #(word-wrap % size) lines))
+
 
 
 
 (defn buffer-position-to-cursor
-  ([all-lines position] (buffer-position-to-cursor all-lines position -1))
-  ([all-lines position wrapped]
+
+  [all-lines position]
   (let [
     sizes (len-of-each-line all-lines)
 
@@ -68,18 +93,17 @@
 
           line-index (first inds)
           col (+ (nth lines line-index) (nth sizes line-index))
-          final-col (- col (* line-index 1))
-          ]
-
-          (if (and (is-wrapped? wrapped) (>= final-col wrapped))
-            ; if
-            (
-                buffer-position-to-cursor (word-wrap (nth all-lines line-index) wrapped) final-col ;; current line
-              )
+          final-col (- col (* line-index 1))]
 
             { :line line-index
-        :col final-col
-        } ; else
-            )
-       ))))
+              :col final-col }
+       )))
 
+(defn position-to-cursor-wrapped
+  [buff position wrap-size]
+  (let [lines (to-lines buff)
+        wrapped (word-wrap-lines lines wrap-size)
+        sizes (len-of-each-line wrapped)]
+
+        (get-position sizes position))
+  )

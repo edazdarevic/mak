@@ -76,22 +76,74 @@
 
    ))
 
-(deftest cursor-position-4
-  (let [b (buffer/create-buffer "edin\ndazdarevic")
-   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 4 3)]
-   (is ( = (:line position) 1))
-   (is ( = (:col position) 0))
+(deftest get-position
+  (let [b (buffer/create-buffer "abcd\nefghi")
+        lines (buffer/to-lines b)
+        wrapped (buffer/word-wrap-lines lines 3)
+        sizes (buffer/len-of-each-line wrapped)
+        pos (buffer/get-position sizes 5)
+        ]
+        (is (= (:line pos) 2))
+        (is (= (:col pos) 1))
+        ))
 
-   ))
+(deftest get-position-wordwrapped
+  (let [b (buffer/create-buffer "edin\ndazdarevicabcd")
+        pos (buffer/position-to-cursor-wrapped b 10 5)]
 
-; edi
-; nda
-; zda
-(deftest cursor-position-5
+        (is (= (:line pos) 2))
+        (is (= (:col pos)  1))))
+
+(deftest get-position-wordwrapped2
+  (let [b (buffer/create-buffer "edin\ndazdarevicabcd")
+        pos (buffer/position-to-cursor-wrapped b 15 5)]
+
+        (is (= (:line pos) 3))
+        (is (= (:col pos)  1))))
+
+(deftest get-position-wordwrapped3
+  (let [b (buffer/create-buffer "edind\ndazdarevicabcd")
+        pos (buffer/position-to-cursor-wrapped b 10 5)]
+
+        (is (= (:line pos) 2))
+        (is (= (:col pos)  0))))
+
+
+(deftest get-position-wordwrapped4
+  (let [b (buffer/create-buffer "edind\ndazdarevicabcd")
+        pos (buffer/position-to-cursor-wrapped b 16 5)]
+
+        (is (= (:line pos) 3))
+        (is (= (:col pos)  1))))
+
+(deftest get-position-wordwrapped5
+  (let [b (buffer/create-buffer "edin\n")
+        pos (buffer/position-to-cursor-wrapped b 2 5)]
+
+        (is (= (:line pos) 0))
+        (is (= (:col pos)  2))))
+
+(deftest get-position-wordwrapped6
+  (let [b (buffer/create-buffer "edin\n")
+        pos (buffer/position-to-cursor-wrapped b 0 5)]
+
+        (is (= (:line pos) 0))
+        (is (= (:col pos)  0))))
+
+(deftest get-position-wordwrapped7
+  (let [b (buffer/create-buffer "edin\na")
+        pos (buffer/position-to-cursor-wrapped b 4 5)]
+
+        (is (= (:line pos) 1))
+        (is (= (:col pos)  0))))
+
+(deftest idx-of-negative
   (let [b (buffer/create-buffer "edin\ndazdarevic")
-   position (buffer/buffer-position-to-cursor (buffer/to-lines b) 7 3)]
-   (is ( = (:line position) 2))
-   (is ( = (:col position) 1))
+        a [3 1 9]
+        idx (buffer/get-index-of-negative a 7)
+        sum (buffer/sum-up-to a idx)]
+   (is ( = idx 2))
+   (is ( = sum 4))
 
    ))
 
