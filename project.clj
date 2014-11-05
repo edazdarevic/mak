@@ -13,7 +13,7 @@
                          :source-paths ["src-cljs"]
                          :compiler {
                                     :output-to "dist/js/main.js"
-                                    :optimizations :none
+                                    :optimizations :whitespace
                                     :pretty-print true
                                     }
                          }
