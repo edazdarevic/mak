@@ -82,11 +82,11 @@
 
 (defn move-left
   [buff position]
-  (max 0 (min (- position 1) (count buff))))
+  (max 0 (min (- position 1) (.-length buff))))
 
 (defn move-right
   [buff position]
-  (max 0 (min (+ position 1) (count buff))))
+  (max 0 (min (+ position 1) (.-length buff))))
 
 (defn ensure-bounds
   [start end value]
@@ -94,15 +94,13 @@
 
 (defn prev-newline-index
   [buff position]
-  (- position (count
+  (ensure-bounds 0 (+ 0 (count buff)) (- position (count
     (take-while
       #(not= % "\n")
       (reverse
-        (take (inc position) buff))))))
+        (take (+ 0 position) buff)))) 1)))
 
-(defn move-up
-  "Returns new position based on move up"
-  [buff current-position])
+
 
 (defn buffer-position-to-cursor
 
@@ -133,4 +131,55 @@
         sizes (len-of-each-line wrapped)]
 
         (get-position sizes position))
+  )
+
+(defn position-to-cursor
+  [buff position]
+  (let [lines (to-lines2 buff)
+        sizes (len-of-each-line lines)]
+
+        (get-position sizes position))
+  )
+
+
+(defn line-size-at
+  "Returns size of the line on which position is"
+  [buff position]
+    (let [pos (position-to-cursor buff position)]
+
+      (count (nth (to-lines2 buff) (:line pos))))
+  )
+
+(defn line-bounds
+  [buff position]
+    (let [pos (position-to-cursor buff position)
+          lns (to-lines2 buff)
+          sizes (len-of-each-line lns)
+          start (sum-up-to sizes (:line pos))
+          line-length (count (nth lns (:line pos)))
+          ]
+
+       {:start start :end (+ start line-length -1) }
+      )
+  )
+
+
+
+(defn move-up
+  "Returns new position based on move up"
+  [buff current-position]
+  (let [
+        pos (position-to-cursor buff current-position)
+        prevline-index (prev-newline-index buff current-position)
+        pos2 (position-to-cursor buff prevline-index)
+        prevline-size (line-size-at buff prevline-index)
+        lb (line-bounds buff prevline-index)
+
+        ]
+        (if (not= (:line pos) (:line pos2) )
+          (ensure-bounds (:start lb) (:end lb) (- current-position prevline-size))
+          current-position
+          )
+
+        )
   )

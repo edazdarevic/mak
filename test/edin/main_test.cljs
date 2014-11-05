@@ -244,6 +244,71 @@
         (is (= newline-index 5))
     ))
 
+(deftest position-to-cursor-nonwrapped
+  (let [b (buffer/create-buffer "edin\ndaz")
+        pos (buffer/position-to-cursor b 4)
+        pos2 (buffer/position-to-cursor b 5)]
+
+        (is (= (:line pos) 0))
+        (is (= (:line pos2) 1))))
+
+(deftest line-size-at
+  (let [b (buffer/create-buffer "edin\ndazdarevic\nhamovic")
+        size-on-line1 (buffer/line-size-at b 5)
+        size-on-line0 (buffer/line-size-at b 1)
+        size-on-line2 (buffer/line-size-at b 18)
+        size-on-line0a (buffer/line-size-at b 4)]
+
+        (is (= size-on-line1 11)) ;; TODO: last line does not have endline
+        (is (= size-on-line0 5))
+        (is (= size-on-line2 8))
+        (is (= size-on-line0a 5))
+        ))
+(deftest find-newline-test
+  (let [b (buffer/create-buffer "ed\nin\ntest")
+
+        newline-index (buffer/prev-newline-index b 5)]
+
+        (is (= newline-index 2)))
+
+  )
+(deftest line-bounds
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+        lb1 (buffer/line-bounds b 1)
+        lb2 (buffer/line-bounds b 4)
+        lb3 (buffer/line-bounds b 6)]
+        (is (= (:start lb1) 0))
+        (is (= (:end lb1) 4))
+        (is (= (:start lb2) 0))
+        (is (= (:end lb2) 4))
+        (is (= (:start lb3) 5))
+        (is (= (:end lb3) 14))
+        ))
+
+(deftest move-up-test
+  (let [b (buffer/create-buffer "edin\ndazdarevic")
+        new-pos1 (buffer/move-up b 5)
+        new-pos2 (buffer/move-up b 8)
+        new-pos3 (buffer/move-up b 9)
+        new-pos4 (buffer/move-up b 0)
+        new-pos5 (buffer/move-up b 3)
+        new-pos6 (buffer/move-up b 4)
+        new-pos7 (buffer/move-up b 13)
+        new-pos8 (buffer/move-up b 14)]
+
+        (is (= new-pos1 0))
+        (is (= new-pos2 3))
+        (is (= new-pos3 4))
+        (is (= new-pos4 0))
+        (is (= new-pos5 3))
+        (is (= new-pos6 4))
+        (is (= new-pos7 4))
+        (is (= new-pos8 4))
+
+
+        ))
+
+
 (deftest word-wrap-test
   (let [b (buffer/create-buffer "edindazdarevic")
     wrapped (buffer/word-wrap b 4)]

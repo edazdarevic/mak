@@ -26,6 +26,10 @@
 (def buffer (b/create-buffer ""))
 (def bp 0)
 (def ws 80)
+(def cx 0)
+(def cy 0)
+
+
 
 
 (util/log "Edin started!")
@@ -47,11 +51,12 @@
 
 (defn render-cursor
   []
-  (let [cp (b/position-to-cursor-wrapped buffer bp ws)
-        line (:line cp)
-        col (:col cp)
-        coord-y (+ STARTY (* line 20))
-        coord-x (+ STARTX (* col char-width))]
+  (let [
+        ; cp (b/position-to-cursor buffer bp)
+        ; line (:line cp)
+        ; col (:col cp)
+        coord-y (+ STARTY (* cy 20))
+        coord-x (+ STARTX (* cx char-width))]
 
         (drawing/fillRect ctx coord-x coord-y 2 14)
 
@@ -74,7 +79,8 @@
   []
   (render-ui)
   (render-text (b/to-lines buffer))
-  (render-cursor))
+  (render-cursor)
+  )
 
 (render)
 
@@ -94,7 +100,35 @@
 
 (defn handle-enter
   []
-  (binsert "\n"))
+  (binsert "\n")
+  (set! cy (inc cy))
+  (set! cx 0))
+
+(defn handle-up
+  []
+  (set! bp (b/move-up buffer bp)))
+
+(defn dec-bp!
+  []
+  (set! bp (max 0 (dec bp))))
+
+(defn handle-backspace
+  []
+  (dec-bp!)
+  (set! buffer (b/remove-at buffer bp))
+  (set! cx (max 0 (dec cx)))
+
+  )
+
+(defn handle-space
+  []
+  (binsert " ")
+  (set! cx (inc cx)))
+
+(defn handle-default
+  [keyCode]
+  (binsert (.fromCharCode js/String (+ 32 keyCode)))
+  (set! cx (inc cx)))
 
 (defn on-input
   [e]
@@ -106,8 +140,10 @@
       (= keyCode 37) (handle-move-back)
       (= keyCode 39) (handle-move-forward)
       (= keyCode 13) (handle-enter)
-      (= keyCode 32) (binsert " ")
-      :else (binsert (.fromCharCode js/String (+ 32 keyCode))) )
+      (= keyCode 38) (handle-up)
+      (= keyCode 32) (handle-space)
+      (= keyCode 8)  (handle-backspace)
+      :else (handle-default keyCode) )
 
     (render)))
   )
